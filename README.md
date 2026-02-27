@@ -1,4 +1,4 @@
-# gleed-landing
+# gleem-landing
 
 Next.js landing page project using a cleaned marketing template starter.
 

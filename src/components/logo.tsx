@@ -6,6 +6,6 @@ interface LogoProps extends React.SVGProps<SVGSVGElement> {
 
 export function Logo({ size = 20, className, ...props }: LogoProps) {
   return (
-    <img className="w-[20px]" src={"/logo-gleed.webp"}/>
+    <img className="w-[20px]" src={"/logo-gleem.webp"}/>
   )
 }

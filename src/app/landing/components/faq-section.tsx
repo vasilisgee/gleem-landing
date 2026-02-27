@@ -75,7 +75,7 @@ const FaqSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mx-auto max-w-2xl text-center mb-16">
-          <Badge variant="outline" className="mb-4">FAQ</Badge>
+         <Badge className="mb-4 bg-background border-foreground/30 text-foreground">FAQ</Badge>
           <h2 className="text-5xl font-semibold tracking-tight mb-6">
             Frequently Asked Questions
           </h2>
@@ -115,7 +115,7 @@ const FaqSection = () => {
 
         <div className="flex items-end justify-center">
               <Image
-                src="/peeps/gleed-peep-sit-4.webp"
+                src="/peeps/gleem-peep-sit-4.webp"
                 alt="Placeholder character illustration"
                 width={120}
                 height={0}
@@ -123,7 +123,7 @@ const FaqSection = () => {
                 priority={false}
               />
               <Image
-                src="/peeps/gleed-peep-stand-3.webp"
+                src="/peeps/gleem-peep-stand-3.webp"
                 alt="Placeholder character illustration"
                 width={100}
                 height={0}

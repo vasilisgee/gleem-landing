@@ -36,7 +36,7 @@ export function ContactSection({ onSubmitted }: ContactSectionProps) {
           Need help or have questions?
         </h2>
         <p className="text-lg text-muted-foreground">
-          Our team is here to help you get the most out of Gleed.
+          Our team is here to help you get the most out of Gleem.
         </p>
       </div>
 
@@ -73,7 +73,7 @@ export function ContactSection({ onSubmitted }: ContactSectionProps) {
                 Report bugs, request features, or share feedback on the project.
               </p>
               <Button variant="outline" size="sm" className="cursor-pointer" asChild>
-                <a href="https://github.com/your-org/gleed-landing/issues" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/vasilisgee/gleem-landing/issues" target="_blank" rel="noopener noreferrer">
                   View on GitHub
                 </a>
               </Button>

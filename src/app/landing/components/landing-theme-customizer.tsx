@@ -38,7 +38,7 @@ export function LandingThemeCustomizer({ open, onOpenChange }: LandingThemeCusto
 
   const { toggleTheme } = useCircularTransition()
 
-  const [selectedTheme, setSelectedTheme] = React.useState("default")
+  const [selectedTheme, setSelectedTheme] = React.useState("")
   const [selectedTweakcnTheme, setSelectedTweakcnTheme] = React.useState("")
   const [selectedRadius, setSelectedRadius] = React.useState("0.5rem")
   const [importModalOpen, setImportModalOpen] = React.useState(false)
@@ -191,7 +191,7 @@ export function LandingThemeCustomizer({ open, onOpenChange }: LandingThemeCusto
                 </Button>
               </div>
 
-              <Select value={selectedTheme} onValueChange={(value) => {
+              <Select value={selectedTheme || undefined} onValueChange={(value) => {
                 setSelectedTheme(value)
                 setSelectedTweakcnTheme("")
                 setBrandColorsValues({})
@@ -245,7 +245,7 @@ export function LandingThemeCustomizer({ open, onOpenChange }: LandingThemeCusto
                 </Button>
               </div>
 
-              <Select value={selectedTweakcnTheme} onValueChange={(value) => {
+              <Select value={selectedTweakcnTheme || undefined} onValueChange={(value) => {
                 setSelectedTweakcnTheme(value)
                 setSelectedTheme("")
                 setBrandColorsValues({})

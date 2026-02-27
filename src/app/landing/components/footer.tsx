@@ -9,7 +9,7 @@ import {
 
 const socialLinks = [
 
-  { name: "LinkedIn", href: "https://www.linkedin.com", icon: PiLinkedinLogo },
+  // { name: "LinkedIn", href: "https://www.linkedin.com", icon: PiLinkedinLogo },
   { name: "Facebook", href: "https://www.facebook.com", icon: PiFacebookLogo },
   { name: "Instagram", href: "https://www.instagram.com", icon: PiInstagramLogo },
   { name: "TikTok", href: "https://www.instagram.com", icon: PiTiktokLogo },
@@ -24,7 +24,7 @@ export function LandingFooter() {
         <div className="flex flex-col lg:flex-row justify-between items-center gap-2">
           <div className="flex flex-col sm:flex-row items-center gap-2 text-muted-foreground text-xs">
             <div className="flex items-center gap-1">
-              <span>© {new Date().getFullYear()} Gleed Project</span>
+              <span>© {new Date().getFullYear()} Gleem Project</span>
               <span className="hidden sm:inline mx-1">•</span>
               <span>Created by <a href="#" target='_blank' className="font-semibold text-foreground hover:text-primary transition-colors cursor-pointer">
                 Vasilis Gourgourinis</a></span>
@@ -42,7 +42,7 @@ export function LandingFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.name}
-                  className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground  transition-colors  hover:bg-muted/70 hover:text-foreground"
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-lg transition-colors  hover:bg-muted/70 hover:text-foreground"
                 >
                   <Icon className="h-5 w-5" />
                 </a>

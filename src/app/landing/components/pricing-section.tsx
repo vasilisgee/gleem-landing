@@ -2,13 +2,13 @@
 
 import type { FormEvent } from "react"
 import { Check, CircleCheckBig } from 'lucide-react'
-import Image from "next/image"
 import { toast } from "sonner"
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Input } from '@/components/ui/input'
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 import { useState } from 'react'
+import Image from 'next/image'
 import { DotPattern } from '@/components/dot-pattern'
 import {
   Dialog,
@@ -59,27 +59,28 @@ export function PricingSection() {
   return (
     <section id="pricing" className="py-24 ">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="mx-auto max-w-2xl text-center mb-12 z-20 relative ">
-          <Badge className="mb-4 bg-background border-foreground text-foreground">Pricing Plan</Badge>
+        <div className="mx-auto max-w-md text-center mb-10 z-20 relative ">
+          <Badge className="mb-4 bg-background border-foreground/30 text-foreground">Pricing Plan</Badge>
           <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl mb-6">
             Simple and transparent pricing
           </h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            Have your website built for FREE. Pay only for hosting and support.
+          <p className="text-lg text-muted-foreground ">
+            
+            Pay only for hosting and support.
           </p>
 
         </div>
 
         <div className="mx-auto max-w-3xl z-20 relative ">
-           {/* <Image
-              src="/peeps/gleed-peep-stand-6.webp"
+           <Image
+              src="/peeps/gleem-peep-stand-6.webp"
               alt=""
               aria-hidden
               width={160}
               height={160}
-              className="pointer-events-none absolute left-5 -top-40 z-0 h-auto w-[125px]"
-            /> */}
-          <div className="border bg-card/60 py-2 rounded-xl relative">
+              className="pointer-events-none absolute left-15 -top-35 z-0 h-auto w-[100px]"
+            />
+          <div className="border bg-card py-2 rounded-xl relative">
             <div className="grid items-start lg:grid-cols-2 relative z-20">
               <div className="p-8 flex flex-col gap-6">
               
@@ -103,7 +104,7 @@ export function PricingSection() {
                 <div>
                   <div className="text-xl font-medium tracking-tight mb-2">What you get</div>
                   <div className="text-muted-foreground text-balance text-sm">
-                    Everything included in your website
+                    Everything included in your website.
                   </div>
                 </div>
 
@@ -176,7 +177,7 @@ export function PricingSection() {
 
               </div>
 
-              <div className="p-8 flex flex-col gap-6 my-2 mx-4 rounded-xl bg-card border-transparent shadow-xl ring-1 ring-foreground/10 bg-gradient-to-r from-primary/4 to-secondary/8 lg:self-center">
+              <div className="p-8 py-10 flex flex-col gap-4 my-2 mx-4 rounded-xl bg-card border-transparent shadow-xl ring-1 ring-foreground/10 bg-gradient-to-r from-primary/8 to-secondary/8 lg:self-center">
 
                 <div className="align-center text-center">
 
@@ -217,15 +218,15 @@ export function PricingSection() {
                       <div className="text-4xl font-bold ">
                         {isYearly ? "$7" : "$9"}
                       </div>
-                      <div className="text-muted-foreground text-sm ml-2">/ month</div> 
+                      <div className="text-sm font-bold ml-1">/mo</div> 
                   </div>
                 </div>
 
-                <div>
+                <div className="conic-cta-border conic-cta-border-hero w-full rounded-lg">
                   <Button
                     type="button"
                     onClick={() => openLeadDialog("Website Care & Support")}
-                    className="w-full cursor-pointer shadow-md border-[0.5px] border-white/25 shadow-black/20 bg-primary ring-1 ring-primary/15 text-primary-foreground hover:bg-primary/90 transition-all duration-150"
+                    className="w-full text-base cursor-pointer h-10 border border-transparent transition-colors duration-700 ease-out"
                     variant="default"
                   >
                     Get your Website

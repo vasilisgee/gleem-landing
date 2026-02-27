@@ -1,8 +1,6 @@
 "use client"
 
-import { Star } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
 
 export function CTASection() {
   return (
@@ -32,37 +30,39 @@ export function CTASection() {
               </div>
 
               <div className='flex flex-col justify-center gap-4 sm:flex-row sm:gap-6'>
-                <Button size='lg' className='cursor-pointer font-medium' asChild>
-                  <a href='#'>
-                    Get your Website
-                  </a>
-                </Button>
-                <Button variant='outline' size='lg' className='cursor-pointer font-medium group' asChild>
-                  <a href='#'>
+                <div className="conic-cta-border conic-cta-border-hero rounded-lg">
+                  <Button size='lg' className='cursor-pointer font-medium border border-transparent' asChild>
+                    <a href='#pricing'>
+                      Get your Website
+                    </a>
+                  </Button>
+                </div>
+                {/* <Button variant='outline' size='lg' className='cursor-pointer font-medium group' asChild>
+                  <a href='#what-included'>
                     Learn More
                   </a>
-                </Button>
+                </Button> */}
               </div>
 
-              <div className='text-muted-foreground flex flex-wrap items-center justify-center gap-6 text-xs'>
+              <div className='text-foreground flex flex-wrap items-center justify-center gap-6 text-xs'>
                 <div className='flex items-center gap-2'>
-                    <div className='size-2 rounded-full bg-foreground/40 me-1' />
+                    <span className='logo-dot-glow me-1 inline-flex items-center justify-center text-base leading-none -translate-y-px'>●</span>
 
                   <span>Free to get started</span>
                 </div>
                 <div className='flex items-center gap-2'>
-                    <div className='size-2 rounded-full bg-foreground/40 me-1' />
+                    <span className='logo-dot-glow me-1 inline-flex items-center justify-center text-base leading-none -translate-y-px'>●</span>
 
                   <span>Everything in one page</span>
                 </div>
                 <div className='flex items-center gap-2'>
-                    <div className='size-2 rounded-full bg-foreground/40 me-1' />
+                    <span className='logo-dot-glow me-1 inline-flex items-center justify-center text-base leading-none -translate-y-px'>●</span>
 
                   <span>Easy to update anytime</span>
                 </div>
               </div>
             </div>
-            <div className="pointer-events-none absolute top-2 left-1/2 h-24 w-[80%] -translate-x-1/2 rounded-full bg-primary/5 blur-3xl lg:-top-8 lg:h-80" />
+            {/* <div className="pointer-events-none absolute top-2 left-1/2 h-24 w-[80%] -translate-x-1/2 rounded-full bg-primary/5 blur-3xl lg:-top-8 lg:h-80" /> */}
             
           </div>
         </div>

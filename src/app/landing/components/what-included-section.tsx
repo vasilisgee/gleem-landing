@@ -61,7 +61,7 @@ export function WhatIncludedSection() {
         <div className="mx-auto max-w-6xl">
           {/* Section Header */}
           <div className="max-w-3xl mb-14">
-            <Badge className="mb-4 bg-background border-foreground text-foreground">
+            <Badge className="mb-4 bg-background border-foreground/30 text-foreground">
              What we Offer
             </Badge>
             <h2 className="text-5xl font-bold tracking-tight mb-6">
@@ -75,12 +75,12 @@ export function WhatIncludedSection() {
           {/* Included Features Grid */}
           <div className="relative">
             <Image
-              src="/peeps/gleed-peep-sit-2.webp"
+              src="/peeps/gleem-peep-sit-2.webp"
               alt=""
               aria-hidden
               width={160}
               height={160}
-              className="pointer-events-none absolute right-2 -top-42 z-20 -scale-x-100 h-auto w-[140px]"
+              className="pointer-events-none absolute right-2 -top-38 z-20 -scale-x-100 h-auto w-[130px]"
             />
             <div className="relative z-10 grid grid-cols-1 gap-6 lg:grid-cols-3">
               {includedItems.map((item) => (

@@ -4,9 +4,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 
-import standPeep from "../../../../public/peeps/gleed-peep-stand-5.webp"
-import standPeep2 from "../../../../public/peeps/gleed-peep-stand-2.webp"
-import standPeep4 from "../../../../public/peeps/gleed-peep-bike.webp"
+import standPeep from "../../../../public/peeps/gleem-peep-stand-5.webp"
+import standPeep2 from "../../../../public/peeps/gleem-peep-stand-2.webp"
+import standPeep4 from "../../../../public/peeps/gleem-peep-bike.webp"
 
 export function HeroSection() {
   return (
@@ -24,17 +24,19 @@ export function HeroSection() {
              Free websites for small local businesses.<br/> You only pay $9 a month hosting & support.
           </p>
 
-          <div className="flex flex-col gap-4 w-full align-center justify-center">
-            <div className="flex w-full align-center justify-center gap-4">
-              <Button
-                size="lg"
-                className="text-base cursor-pointer border border-primary/40 bg-primary text-primary-foreground"
-                asChild
-              >
-                <Link href="#pricing">Get your website</Link>
-              </Button>
+          <div className="flex w-full flex-col items-center justify-center gap-4">
+            <div className="flex w-full flex-wrap items-center justify-center gap-4">
+              <div className="conic-cta-border conic-cta-border-hero rounded-lg">
+                <Button
+                  size="lg"
+                  className="text-base cursor-pointer border border-transparent"
+                  asChild
+                >
+                  <Link href="#pricing">Get your website</Link>
+                </Button>
+              </div>
 
-              <Button variant="outline" size="lg" className="text-base cursor-pointer" asChild>
+              <Button variant="outline" size="lg" className="text-base cursor-pointer bg-background" asChild>
                 <a href="#how-it-works">See how it works</a>
               </Button>
             </div>
@@ -59,7 +61,7 @@ export function HeroSection() {
                 <Image
                   src={standPeep4}
                   alt=""
-                  className="z-0 relative mr-10 h-[30rem] w-auto object-contain -ml-65 -mr-20"
+                  className="z-0 relative mr-10 h-[29rem] w-auto object-contain -ml-65 -mr-20"
                   priority
                   unoptimized
                 />

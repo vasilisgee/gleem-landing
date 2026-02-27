@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
-import { DotPattern } from '@/components/dot-pattern'
 
 const team = [
   {
@@ -34,11 +33,11 @@ export function TeamSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mx-auto max-w-4xl text-center mb-16">
-          <Badge variant="outline" className="mb-4">
+          <Badge className="mb-4 bg-background border-foreground/30 text-foreground">
             Our Team
           </Badge>
           <h2 className="text-5xl font-semibold tracking-tight mb-6">
-            The gleed team
+            The gleem team
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
            Premium design without the premium price tag. Our designers use the latest AI tools to work smarter, delivering agency-level quality at a fraction of the cost.
@@ -50,6 +49,9 @@ export function TeamSection() {
           <div className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {featuredTeam.map((member) => (
               <Card key={member.id} className="group py-2 shadow-xs relative">
+                <div className="pointer-events-none absolute inset-0 z-0 rounded-[inherit]">
+                  <div className="absolute left-1/2 top-12 h-24 w-1/3 -translate-x-1/2 rounded-full bg-primary/30 blur-2xl dark:bg-primary/70" />
+                </div>
                 <CardContent className="p-4 py-8 text-center relative z-10">
                   <div className="mb-4 flex justify-center">
                     <div className="h-28 w-28 overflow-hidden rounded-full shadow-lg transition-transform duration-500 ease-out will-change-transform group-hover:scale-105">
@@ -71,7 +73,6 @@ export function TeamSection() {
                     {member.description}
                   </p>
                 </CardContent>
-                <DotPattern className="opacity-60 z-0" size="sm" fadeStyle="ellipse" /> 
               </Card>
             ))}
           </div>

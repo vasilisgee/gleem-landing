@@ -13,7 +13,7 @@ import { FaqSection } from './components/faq-section'
 import { LandingFooter } from './components/footer'
 import { LandingThemeCustomizer, LandingThemeCustomizerTrigger } from './components/landing-theme-customizer'
 import { HowItWorksSection } from './components/how-it-works-section'
-import { GleedWaySection } from './components/gleed-way-section'
+import { GleemWaySection } from './components/gleem-way-section'
 
 export function LandingPageContent() {
   const [themeCustomizerOpen, setThemeCustomizerOpen] = React.useState(false)
@@ -24,9 +24,9 @@ export function LandingPageContent() {
 
       <main>
         <HeroSection />
-        <LogoCarousel />
+        {/* <LogoCarousel /> */}
         <HowItWorksSection />
-        <GleedWaySection />
+        <GleemWaySection />
         <WhatIncludedSection />
         <PricingSection />
         <FeaturesSection />

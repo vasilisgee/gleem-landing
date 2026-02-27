@@ -16,22 +16,22 @@ const mainFeatures = [
   {
     icon: MousePointerClick,
     title: 'Easy to use',
-    description: 'Clear fields and simple labels with no confusing settings. If you can fill out a form, you can use it.'
+    description: 'Clear fields and simple labels with no confusing settings.'
   },
   {
     icon: RefreshCw,
     title: 'Update anytime',
-    description: 'Change your business info, text, or details whenever you need. No waiting, no back-and-forth, no support tickets.'
+    description: 'Change your business info, text, or details whenever you need.'
   },
   {
     icon: LogIn,
     title: 'Easy access',
-    description: 'No passwords to remember or accounts to manage. Just sign in with your Google account and you’re in.'
+    description: 'Just sign in with your Google account and you’re in.'
   },
   {
     icon: ClipboardList,
     title: 'Only what matters',
-    description: 'No unnecessary options or advanced settings to worry about. Just the essentials to keep your website up to date.'
+    description: 'No unnecessary options or advanced settings to worry about. '
   }
 ]
 
@@ -64,7 +64,7 @@ export function FeaturesSection() {
           {/* Right Content */}
           <div className="space-y-6">
             <div className="space-y-4">
-             <Badge variant="outline" className="mb-4"> What&apos;s Included</Badge>
+             <Badge className="mb-4 bg-background border-foreground/30 text-foreground"> What&apos;s Included</Badge>
           <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl mb-5">
            One panel to go
           </h2> 
@@ -105,7 +105,7 @@ export function FeaturesSection() {
         </div>
 
          <Image
-            src="/peeps/gleed-peep-sit-3.webp"
+            src="/peeps/gleem-peep-sit-3.webp"
             alt=""
             aria-hidden
             width={160}

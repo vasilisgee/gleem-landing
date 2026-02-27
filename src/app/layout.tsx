@@ -7,7 +7,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { dmSans, playfairDisplay } from "@/lib/fonts";
 
 export const metadata: Metadata = {
-  title: "gleed-landing",
+  title: "gleem-landing",
   description: "Landing page project built with Next.js and shadcn/ui.",
 };
 
