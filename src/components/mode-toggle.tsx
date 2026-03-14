@@ -6,7 +6,7 @@ import { Moon, Sun } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useTheme } from "@/hooks/use-theme"
 import { useCircularTransition } from "@/hooks/use-circular-transition"
-import "./theme-customizer/circular-transition.css"
+import "./mode-toggle.css"
 
 interface ModeToggleProps {
   variant?: "outline" | "ghost" | "default"
@@ -54,7 +54,7 @@ export function ModeToggle({ variant = "outline" }: ModeToggleProps) {
       variant={variant}
       size="icon"
       onClick={handleToggle}
-      className="cursor-pointer mode-toggle-button relative overflow-hidden"
+      className="cursor-pointer mode-toggle-button relative overflow-hidden motion-safe:hover:translate-y-0 motion-safe:active:translate-y-0 motion-safe:active:scale-100 hover:shadow-none active:shadow-none focus-visible:shadow-none"
     >
       {/* Show the icon for the mode you can switch TO */}
       {isDarkMode ? (

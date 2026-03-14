@@ -56,7 +56,7 @@ const includedItems: IncludedItem[] = [
 
 export function WhatIncludedSection() {
   return (
-    <section id="what-included" className="py-24 bg-muted/40">
+    <section id="what-included" className="py-24 bg-muted/40 scroll-mt-0 lg:scroll-mt-10">
       <div className="container mx-auto px-8 sm:px-6">
         <div className="mx-auto max-w-6xl">
           {/* Section Header */}
@@ -65,7 +65,7 @@ export function WhatIncludedSection() {
              What we Offer
             </Badge>
             <h2 className="text-5xl font-bold tracking-tight mb-6">
-              Everything you need to succeed online
+              Everything you need to shine online
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl">
               We build exactly what small businesses need to look professional and capture leads without the complexity.
@@ -80,7 +80,7 @@ export function WhatIncludedSection() {
               aria-hidden
               width={160}
               height={160}
-              className="pointer-events-none absolute right-2 -top-38 z-20 -scale-x-100 h-auto w-[130px]"
+              className="pointer-events-none absolute right-2 lg:-top-38 -top-18 z-20 -scale-x-100 h-auto w-[65px] lg:w-[130px]"
             />
             <div className="relative z-10 grid grid-cols-1 gap-6 lg:grid-cols-3">
               {includedItems.map((item) => (

@@ -42,14 +42,14 @@ const gleemBenefits = [
 
 export function GleemWaySection() {
   return (
-    <section id="gleem-way" className="py-20 sm:py-24 bg-muted/40">
+    <section id="gleem-way" className="py-20 sm:py-24 bg-muted/40 scroll-mt-5 lg:scroll-mt-15">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl relative">
           <div className="mx-auto mb-12 max-w-4xl text-center sm:mb-14 relative z-10">
             <Badge className="mb-4 bg-background border-foreground/30 text-foreground">
               Why Gleem
             </Badge>
-            <h2 className="mb-6 text-4xl font-semibold leading-13 tracking-tight sm:text-5xl">
+            <h2 className="mb-6 text-5xl font-semibold leading-13 tracking-tight sm:text-5xl">
               Website builders take time.
               <br />
               Agencies cost a fortune.
@@ -61,9 +61,9 @@ export function GleemWaySection() {
             </p>
           </div>
 
-          <div className="mx-auto max-w-4xl relative z-10">
-            <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
-              <Card className="py-0 h-fit lg:self-center">
+          <div className="relative z-10 mx-auto max-w-4xl overflow-hidden lg:overflow-visible">
+            <div className="grid gap-6 lg:grid-cols-2 lg:items-start relative">
+              <Card className="order-2 h-fit py-0 lg:order-1 lg:self-center relative z-10">
                 <CardContent className="p-8 sm:p-10">
                   {/* <div className="mb-3">
                     <svg
@@ -90,7 +90,7 @@ export function GleemWaySection() {
                 </CardContent>
               </Card>
 
-              <Card className="relative overflow-hidden border-0 py-0 shadow-xl ring-1 ring-transparent">
+              <Card className="relative z-10 order-1 overflow-hidden border-0 py-0 shadow-xl ring-1 ring-transparent lg:order-2">
                 <div
                   className="mega-menu-shine-ring mega-menu-shine-animate pointer-events-none absolute inset-0 z-0 size-full rounded-[inherit] will-change-[background-position]"
                   style={
@@ -137,10 +137,10 @@ export function GleemWaySection() {
                   </ul>
                 </CardContent>
               </Card>
+              <div className="pointer-events-none absolute hidden lg:block bottom-3 left-1/2 z-0 h-56 w-56 -translate-x-1/2 rounded-full bg-primary/20 blur-3xl sm:bottom-4 sm:h-72 sm:w-72 md:h-80 md:w-80 lg:-bottom-5 lg:left-auto lg:-right-42 lg:h-95 lg:w-[44%]" />
             </div>
-           
           </div>
-           <DotPattern className="opacity-50 z-0" size="md" fadeStyle="ellipse" /> 
+          {/* <DotPattern className="opacity-30 z-0" size="md" fadeStyle="ellipse" />  */}
         </div>
       </div>
     </section>

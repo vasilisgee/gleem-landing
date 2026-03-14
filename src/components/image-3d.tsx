@@ -4,6 +4,9 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { cn } from "@/lib/utils"
 
+const SCREENSHOT_WIDTH = 1542
+const SCREENSHOT_HEIGHT = 930
+
 interface Image3DProps {
   lightSrc: string
   darkSrc: string
@@ -38,7 +41,7 @@ export function Image3D({
   }, [slideCount])
 
   return (
-    <div className={cn("group relative aspect-[16/10] w-full", className)}>
+    <div className={cn("group relative aspect-[1542/930] w-full", className)}>
       <div className="perspective-distant transform-3d size-full">
         <div className="relative size-full transform-3d group-hover:rotate-x-8 group-hover:rotate-y-12 group-hover:translate-z-16 transition-all duration-700 ease-out">
           <div className="absolute inset-0 translate-y-4 translate-x-2 -translate-z-8 rounded-2xl">
@@ -66,11 +69,13 @@ export function Image3D({
                   key={`light-${src}-${index}`}
                   src={src}
                   alt={`${alt} - Light ${index + 1}`}
-                  width={800}
-                  height={600}
-                  sizes="(min-width: 1280px) 560px, (min-width: 1024px) 48vw, 100vw"
+                  width={SCREENSHOT_WIDTH}
+                  height={SCREENSHOT_HEIGHT}
+                  sizes="(min-width: 1280px) 620px, (min-width: 1024px) calc(50vw - 3rem), 100vw"
+                  quality={100}
+                  unoptimized
                   className={cn(
-                    "absolute inset-0 size-full object-cover object-top transition-opacity duration-700 motion-reduce:transition-none",
+                    "absolute inset-0 size-full object-cover object-top [image-rendering:auto] transition-opacity duration-700 motion-reduce:transition-none",
                     index === slideIndex % lightImages.length ? "opacity-100" : "opacity-0"
                   )}
                   priority={index === 0}
@@ -84,11 +89,13 @@ export function Image3D({
                   key={`dark-${src}-${index}`}
                   src={src}
                   alt={`${alt} - Dark ${index + 1}`}
-                  width={800}
-                  height={600}
-                  sizes="(min-width: 1280px) 560px, (min-width: 1024px) 48vw, 100vw"
+                  width={SCREENSHOT_WIDTH}
+                  height={SCREENSHOT_HEIGHT}
+                  sizes="(min-width: 1280px) 620px, (min-width: 1024px) calc(50vw - 3rem), 100vw"
+                  quality={100}
+                  unoptimized
                   className={cn(
-                    "absolute inset-0 size-full object-cover object-top transition-opacity duration-700 motion-reduce:transition-none",
+                    "absolute inset-0 size-full object-cover object-top [image-rendering:auto] transition-opacity duration-700 motion-reduce:transition-none",
                     index === slideIndex % darkImages.length ? "opacity-100" : "opacity-0"
                   )}
                   priority={index === 0}

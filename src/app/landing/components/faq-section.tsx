@@ -3,7 +3,7 @@
 import { useState } from "react"
 import dynamic from "next/dynamic"
 import Image from 'next/image'
-import { CircleHelp } from 'lucide-react'
+import { CircleHelp, Mail } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Badge } from '@/components/ui/badge'
@@ -71,7 +71,7 @@ const FaqSection = () => {
   const [isContactDialogOpen, setIsContactDialogOpen] = useState(false)
 
   return (
-    <section id="faq" className="py-24 bg-muted/40">
+    <section id="faq" className="py-24 bg-muted/40 scroll-mt-0 lg:scroll-mt-15">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mx-auto max-w-2xl text-center mb-16">
@@ -92,7 +92,11 @@ const FaqSection = () => {
                 <div className='p-0'>
                   <Accordion type='single' collapsible className='space-y-5'>
                     {faqItems.map(item => (
-                      <AccordionItem key={item.value} value={item.value} className='rounded-md !border bg-background shadow-xs'>
+                      <AccordionItem
+                        key={item.value}
+                        value={item.value}
+                        className='faq-accordion-item rounded-md !border bg-background shadow-xs transition-[background-color,border-color,box-shadow] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-accent/90 data-[state=open]:bg-accent/90'
+                      >
                         <AccordionTrigger className='cursor-pointer items-center gap-4 rounded-none bg-transparent py-2 ps-3 pe-4 hover:no-underline data-[state=open]:border-b'>
                           <div className='flex items-center gap-4'>
                             <div className='text-primary flex size-7 shrink-0 items-center justify-center rounded-full'>
@@ -137,11 +141,14 @@ const FaqSection = () => {
                 <p className="text-muted-foreground mb-4 text-sm text-center">
                   Still have questions? We&apos;re here to help.
                 </p>
-                <Dialog open={isContactDialogOpen} onOpenChange={setIsContactDialogOpen}>
+                  <Dialog open={isContactDialogOpen} onOpenChange={setIsContactDialogOpen}>
                   <DialogTrigger asChild>
-                    <Button className='cursor-pointer'>Contact Us</Button>
+                    <Button variant="secondary" className='cursor-pointer'>
+                      Contact Us
+                      <Mail className="size-4 ms-1" />
+                    </Button>
                   </DialogTrigger>
-                  <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-5xl">
+                  <DialogContent className="max-h-[90vh] min-h-[50vh] overflow-y-auto sm:max-w-5xl">
                     <DialogHeader className="sr-only">
                       <DialogTitle>Contact Us</DialogTitle>
                       <DialogDescription>

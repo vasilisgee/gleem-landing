@@ -37,7 +37,7 @@ const mainFeatures = [
 
 export function FeaturesSection() {
   return (
-    <section id="features" className="py-24 bg-muted/40 pb-10">
+    <section id="features" className="py-24 bg-muted/40 pb-10 scroll-mt-0 lg:scroll-mt-15">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
      
@@ -64,10 +64,10 @@ export function FeaturesSection() {
           {/* Right Content */}
           <div className="space-y-6">
             <div className="space-y-4">
-             <Badge className="mb-4 bg-background border-foreground/30 text-foreground"> What&apos;s Included</Badge>
-          <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl mb-5">
-           One panel to go
-          </h2> 
+              <Badge className="mb-4 bg-background border-foreground/30 text-foreground"> What&apos;s Included</Badge>
+              <h2 className="text-5xl font-semibold tracking-tight sm:text-5xl mb-5">
+              One panel to go
+              </h2> 
               <p className="text-muted-foreground text-base text-pretty">
                 Everything you need to manage your website, and nothing you don’t.
               </p>
@@ -87,16 +87,16 @@ export function FeaturesSection() {
               ))}
             </ul>
 
-            <div className="flex flex-col sm:flex-row gap-4 pe-4 pt-5">
-              <Button size="lg" className="cursor-pointer">
-                <a href="#" className='flex items-center'>
-                  View Demo
+            <div className="flex flex-row gap-4 pt-5">
+              <Button size="lg" variant="secondary" className="cursor-pointer">
+                <a href="https://thegreekrestaurant.vercel.app/login" target="_blank" className='flex items-center'>
+                  Try Admin Panel
                   <ArrowRight className="ms-2 size-4" aria-hidden="true" />
                 </a>
               </Button>
-              <Button size="lg" variant="outline" className="cursor-pointer">
-                <a href="#" className='flex items-center'>
-                   Customer Case
+              <Button size="lg" variant="secondary" className="cursor-pointer">
+                <a href="https://thegreekrestaurant.vercel.app/" target="_blank" className='flex items-center'>
+                   View Live Website
                   <ArrowRight className="ms-2 size-4" aria-hidden="true" />
                 </a>
               </Button>
@@ -110,7 +110,7 @@ export function FeaturesSection() {
             aria-hidden
             width={160}
             height={160}
-            className="pointer-events-none absolute right-12 -bottom-60 z-0 -scale-x-100 h-auto w-[170px]"
+            className="pointer-events-none absolute right-[40%] lg:right-12 -bottom-50 lg:-bottom-60 z-0 -scale-x-100 h-auto w-[100px] lg:w-[170px]"
           />
       </div>
     </section>

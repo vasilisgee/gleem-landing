@@ -1,14 +1,12 @@
 "use client"
 
-import type { ComponentType, CSSProperties } from "react"
+import type { ComponentType, CSSProperties, MouseEvent } from "react"
 import {
-  CircleHelp,
-  CreditCard,
   LayoutGrid,
   ListChecks,
   Rocket,
   Sparkles,
-  Users,
+  Gift,
   WandSparkles,
 } from "lucide-react"
 
@@ -29,66 +27,64 @@ export const megaMenuSections: MegaMenuSection[] = [
     title: " ",
     items: [
       {
-        title: "How it works",
-        description: "See how we plan, design, and launch your website.",
-        icon: LayoutGrid,
+        title: "How it Works",
+        description: "From signup to live site in 72 hours.",
+        icon: Rocket,
         href: "#how-it-works",
       },
       {
         title: "Why Gleem",
-        description: "Why choose gleem for your local businesses.",
-        icon: WandSparkles,
+        description: "Design without the agency price.",
+        icon: Sparkles,
         href: "#gleem-way",
       },
-      {
-        title: "What we offer",
-        description: "Everything included in your one-page business website.",
-        icon: Sparkles,
-        href: "#what-included",
-      },
-      {
-        title: "Feature details",
-        description: "Review all website capabilities and integrations.",
-        icon: ListChecks,
-        href: "#features",
-      },
+     
     ],
   },
   {
     title: "",
     items: [
       {
-        title: "Pricing",
-        description: "Simple monthly or annual pricing with no surprises.",
-        icon: CreditCard,
-        href: "#pricing",
+        title: "What we Offer",
+        description: "Everything a local business needs.",
+        icon: ListChecks ,
+        href: "#what-included",
       },
       {
-        title: "Meet the team",
-        description: "The people crafting and supporting your website.",
-        icon: Users,
-        href: "#team",
+        title: "What's Included",
+        description: "One panel to manage it all.",
+        icon: Gift,
+        href: "#features",
       },
-      {
-        title: "FAQ",
-        description: "Quick answers to common setup and support questions.",
-        icon: CircleHelp,
-        href: "#faq",
-      },
-      {
-        title: "Back to top",
-        description: "Jump to the hero section.",
-        icon: Rocket,
-        href: "#hero",
-      },
+     
     ],
   },
 ]
 
+function smoothScrollTo(targetId: string) {
+  if (!targetId.startsWith("#")) return
+
+  const element = document.querySelector<HTMLElement>(targetId)
+  if (element) {
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    })
+  }
+}
+
 export function MegaMenu() {
+  function handleMegaMenuClick(event: MouseEvent<HTMLAnchorElement>, href: string) {
+    if (!href.startsWith("#")) return
+
+    event.preventDefault()
+    smoothScrollTo(href)
+    ;(document.activeElement as HTMLElement | null)?.blur()
+  }
+
   return (
     <aside className="w-[640px] max-w-[95vw] rounded-3xl p-1">
-      <div className="relative overflow-hidden rounded-2xl border border-border/60 bg-muted/40 px-4 py-4 backdrop-blur-sm sm:px-5 sm:py-5">
+      <div className="relative overflow-hidden rounded-md border border-border/60 bg-muted/40 px-4 py-4 backdrop-blur-sm sm:px-5 sm:py-5">
         <div
           className="mega-menu-shine-ring mega-menu-shine-animate pointer-events-none absolute inset-0 size-full rounded-[inherit] will-change-[background-position]"
           style={
@@ -121,7 +117,8 @@ export function MegaMenu() {
                   <a
                     key={item.title}
                     href={item.href}
-                    className="group block rounded-md p-2 transition-colors hover:bg-accent/60"
+                    className="group block rounded-sm p-2 transition-colors hover:bg-accent/60"
+                    onClick={(event) => handleMegaMenuClick(event, item.href)}
                   >
                     <div className="flex items-center gap-2">
                       <item.icon className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-primary" />

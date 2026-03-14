@@ -29,7 +29,7 @@ export function TeamSection() {
   const featuredTeam = team.slice(0, 3)
 
   return (
-    <section id="team" className="py-24 ">
+    <section id="team" className="py-24 scroll-mt-0 lg:scroll-mt-15">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mx-auto max-w-4xl text-center mb-16">
@@ -48,9 +48,12 @@ export function TeamSection() {
         <div className="mx-auto max-w-5xl">
           <div className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {featuredTeam.map((member) => (
-              <Card key={member.id} className="group py-2 shadow-xs relative">
+              <Card
+                key={member.id}
+                className="group relative overflow-hidden py-2 shadow-[0_12px_28px_-24px_color-mix(in_oklab,var(--primary)_30%,transparent)] transition-shadow duration-500 ease-out hover:shadow-[0_13px_28px_-24px_color-mix(in_oklab,var(--primary)_32%,transparent)]"
+              >
                 <div className="pointer-events-none absolute inset-0 z-0 rounded-[inherit]">
-                  <div className="absolute left-1/2 top-12 h-24 w-1/3 -translate-x-1/2 rounded-full bg-primary/30 blur-2xl dark:bg-primary/70" />
+                  <div className="absolute left-1/2 top-10 h-28 w-[58%] -translate-x-1/2 rounded-full bg-primary/24 opacity-70 blur-3xl transition-[opacity,filter,background-color] duration-500 ease-out group-hover:bg-primary/26 group-hover:opacity-78 group-hover:blur-[34px] dark:bg-primary/46 dark:group-hover:bg-primary/50" />
                 </div>
                 <CardContent className="p-4 py-8 text-center relative z-10">
                   <div className="mb-4 flex justify-center">
@@ -69,7 +72,7 @@ export function TeamSection() {
                     {member.name}
                   </h3>
 
-                  <p className="mb-0 text-sm leading-relaxed text-muted-foreground">
+                  <p className="mb-0 text-sm leading-relaxed text-muted-foreground max-w-70 margin-auto inline-block">
                     {member.description}
                   </p>
                 </CardContent>

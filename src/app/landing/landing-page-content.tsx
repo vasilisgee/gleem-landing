@@ -1,6 +1,5 @@
 "use client"
 
-import React from 'react'
 import { LandingNavbar } from './components/navbar'
 import { HeroSection } from './components/hero-section'
 import { LogoCarousel } from './components/logo-carousel'
@@ -11,20 +10,17 @@ import { PricingSection } from './components/pricing-section'
 import { CTASection } from './components/cta-section'
 import { FaqSection } from './components/faq-section'
 import { LandingFooter } from './components/footer'
-import { LandingThemeCustomizer, LandingThemeCustomizerTrigger } from './components/landing-theme-customizer'
 import { HowItWorksSection } from './components/how-it-works-section'
 import { GleemWaySection } from './components/gleem-way-section'
 
 export function LandingPageContent() {
-  const [themeCustomizerOpen, setThemeCustomizerOpen] = React.useState(false)
-
   return (
     <div className="min-h-screen bg-background">
       <LandingNavbar />
 
       <main>
         <HeroSection />
-        {/* <LogoCarousel /> */}
+        <LogoCarousel />
         <HowItWorksSection />
         <GleemWaySection />
         <WhatIncludedSection />
@@ -36,9 +32,6 @@ export function LandingPageContent() {
       </main>
 
       <LandingFooter />
-
-      <LandingThemeCustomizerTrigger onClick={() => setThemeCustomizerOpen(true)} />
-      <LandingThemeCustomizer open={themeCustomizerOpen} onOpenChange={setThemeCustomizerOpen} />
     </div>
   )
 }

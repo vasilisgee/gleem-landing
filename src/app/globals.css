@@ -257,6 +257,23 @@ html {
   animation-play-state: paused;
 }
 
+.logo-carousel-mark {
+  filter: grayscale(1) brightness(0);
+  opacity: 0.92;
+  transition:
+    filter 260ms ease,
+    opacity 260ms ease;
+}
+
+.dark .logo-carousel-mark {
+  filter: grayscale(1) brightness(0) invert(1);
+}
+
+.logo-carousel-card:hover .logo-carousel-mark {
+  filter: none;
+  opacity: 1;
+}
+
 /* Mega menu border shine */
 @keyframes shine {
   from {
@@ -265,19 +282,6 @@ html {
   to {
     background-position: 300% 300%;
   }
-}
-
-@keyframes cta-shine-sweep {
-  from {
-    background-position: -240% 50%;
-  }
-  to {
-    background-position: 240% 50%;
-  }
-}
-
-.animate-shine {
-  animation: shine var(--duration, 14s) linear infinite;
 }
 
 .mega-menu-shine-animate {
@@ -297,58 +301,6 @@ html {
   --mega-menu-shine: rgba(255, 255, 255, 0.6);
 }
 
-/* Reusable shine border utility for buttons */
-.button-shine-border {
-  --button-shine-color: rgba(0, 0, 0, 0.42);
-  --button-shine-width: 2px;
-  --button-shine-duration: 14s;
-  --button-shine-glow: color-mix(in oklab, var(--foreground) 26%, transparent);
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  transform: translateZ(0);
-  transition: box-shadow 260ms ease-out;
-}
-
-.button-shine-border::before {
-  content: "";
-  pointer-events: none;
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  border-radius: inherit;
-  background-image: radial-gradient(
-    circle at center,
-    transparent 36%,
-    transparent 43%,
-    var(--button-shine-color) 50%,
-    transparent 57%,
-    transparent 64%
-  );
-  background-size: 260% 260%;
-  background-repeat: no-repeat;
-  animation: shine var(--button-shine-duration) linear infinite;
-  padding: var(--button-shine-width);
-  mask:
-    linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0px) content-box exclude,
-    linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0px);
-  -webkit-mask:
-    linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0px) content-box,
-    linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0px);
-  -webkit-mask-composite: xor;
-}
-
-.dark .button-shine-border {
-  --button-shine-color: rgba(255, 255, 255, 0.6);
-  --button-shine-glow: color-mix(in oklab, var(--primary) 42%, transparent);
-}
-
-.button-shine-border:hover {
-  box-shadow:
-    0 0 0.35rem var(--button-shine-glow),
-    0 0 1rem var(--button-shine-glow);
-}
-
 /* Navbar logo dot glow */
 @keyframes logo-dot-breathe {
   0%,
@@ -362,147 +314,160 @@ html {
   }
 }
 
-@keyframes button-glow-breathe {
-  0%,
-  100% {
-    filter:
-      drop-shadow(0 0 0.18rem var(--button-glow-color))
-      drop-shadow(0 0 0.58rem var(--button-glow-color));
-  }
-  50% {
-    filter:
-      drop-shadow(0 0 0.4rem var(--button-glow-color))
-      drop-shadow(0 0 1.12rem var(--button-glow-color));
-  }
-}
-
-.glow-breathe {
-  --button-glow-color: rgba(0, 0, 0, 0.44);
-  will-change: filter;
-  animation: button-glow-breathe 2.4s ease-in-out infinite;
-}
-
-.dark .glow-breathe {
-  --button-glow-color: rgba(190, 190, 190, 0.64);
-}
-
 .logo-dot-glow {
   color: var(--primary);
   display: inline-block;
   animation: logo-dot-breathe 2.4s ease-in-out infinite;
 }
 
-.conic-cta-border {
-  --conic-border-width: 3px;
-  --conic-border-shine: rgba(0, 0, 0, 0.32);
-  --conic-border-duration: 12s;
-  --conic-hover-glow: color-mix(in oklab, var(--foreground) 26%, transparent);
-  --conic-shell-hover-bg: #000000;
-  position: relative;
-  isolation: isolate;
-  display: inline-flex;
-  padding: var(--conic-border-width);
-  overflow: hidden;
-  transition:
-    background-color 660ms cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 260ms ease-out;
+@keyframes button-shine-pass {
+  0% {
+    transform: translate3d(-220%, 0, 0) skewX(-5deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.2;
+  }
+  18% {
+    opacity: 0.95;
+  }
+  30% {
+    transform: translate3d(480%, 0, 0) skewX(-5deg);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translate3d(480%, 0, 0) skewX(-5deg);
+    opacity: 0;
+  }
 }
 
-.conic-cta-border::before {
+.secondary-button[data-slot="button"] {
+  --secondary-button-glow: color-mix(in oklab, var(--foreground) 16%, transparent);
+}
+
+.dark .secondary-button[data-slot="button"] {
+  --secondary-button-glow: color-mix(in oklab, var(--primary) 24%, transparent);
+}
+
+.secondary-button[data-slot="button"]:hover,
+.secondary-button[data-slot="button"]:focus-visible {
+  box-shadow:
+    0 0 0.24rem var(--secondary-button-glow),
+    0 0 0.8rem color-mix(in oklab, var(--secondary-button-glow) 74%, transparent);
+}
+
+.peep-sonner-toast[data-sonner-toast][data-styled="true"] {
+  gap: 0.5rem;
+  border-radius: 1rem;
+  padding: 0.9rem 1rem;
+}
+
+.peep-sonner-toast[data-sonner-toast][data-styled="true"] [data-icon] {
+  height: 4.5rem;
+  width: 4.5rem;
+  margin-left: 0;
+  margin-right: 0.25rem;
+}
+
+.peep-sonner-toast[data-sonner-toast][data-styled="true"] [data-content] {
+  flex: 1;
+  min-width: 0;
+  padding-right: 0.75rem;
+}
+
+.peep-sonner-toast[data-sonner-toast][data-styled="true"] [data-title] {
+  color: var(--popover-foreground);
+  font-size: 0.98rem;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.peep-sonner-toast[data-sonner-toast][data-styled="true"] [data-description] {
+  color: color-mix(in oklab, var(--popover-foreground) 84%, transparent);
+}
+
+.faq-accordion-item[data-slot="accordion-item"] {
+  --faq-accordion-glow: color-mix(in oklab, var(--foreground) 16%, transparent);
+}
+
+.dark .faq-accordion-item[data-slot="accordion-item"] {
+  --faq-accordion-glow: color-mix(in oklab, var(--primary) 24%, transparent);
+}
+
+.faq-accordion-item[data-slot="accordion-item"]:hover,
+.faq-accordion-item[data-slot="accordion-item"][data-state="open"] {
+  box-shadow:
+    0 0 0.24rem var(--faq-accordion-glow),
+    0 0 0.8rem color-mix(in oklab, var(--faq-accordion-glow) 74%, transparent);
+}
+
+.button-shine-sweep[data-slot="button"] {
+  --button-shine-sheen: rgba(255, 255, 255, 0.92);
+  --button-shine-edge: rgba(255, 255, 255, 0.18);
+  --button-shine-hover-glow: color-mix(in oklab, var(--foreground) 30%, transparent);
+  --button-shine-hover-bg: rgb(0, 0, 0);
+  --button-shine-hover-fg: rgb(255, 255, 255);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.button-shine-sweep[data-slot="button"]::after {
   content: "";
   position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
+  top: -45%;
+  bottom: -45%;
+  left: 0%;
+  width: 44%;
   border-radius: inherit;
-  background-image: radial-gradient(
-    circle at center,
-    transparent 36%,
-    transparent 43%,
-    var(--conic-border-shine) 50%,
-    transparent 57%,
-    transparent 64%
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    transparent 24%,
+    var(--button-shine-edge) 38%,
+    var(--button-shine-sheen) 50%,
+    var(--button-shine-edge) 62%,
+    transparent 76%,
+    transparent 100%
   );
-  background-size: 220% 220%;
-  background-repeat: no-repeat;
-  background-position: -240% 50%;
-  animation: cta-shine-sweep var(--conic-border-duration) linear infinite;
-  padding: var(--conic-border-width);
-  mask:
-    linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0px) content-box exclude,
-    linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0px);
-  -webkit-mask:
-    linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0px) content-box,
-    linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0px);
-  -webkit-mask-composite: xor;
-  opacity: 1;
-  transition: opacity 220ms ease-out;
-}
-
-.conic-cta-border > [data-slot="button"] {
-  position: relative;
+  pointer-events: none;
   z-index: 1;
-  background-color: color-mix(in oklab, rgb(20, 20, 20), var(--background) 12%) !important;
-  color: var(--primary-foreground) !important;
-  border-color: transparent !important;
-  transition:
-    background-color 520ms cubic-bezier(0.22, 1, 0.36, 1),
-    color 320ms cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translate3d(-220%, 0, 0) skewX(-22deg);
+  animation: button-shine-pass 6.6s linear infinite;
+  transition: opacity 180ms ease;
 }
 
-.conic-cta-border > [data-slot="button"]:hover {
-  background-color: #000000 !important;
-  color: #ffffff !important;
+.dark .button-shine-sweep[data-slot="button"] {
+  --button-shine-sheen: rgba(0, 0, 0, 0.28);
+  --button-shine-edge: rgba(0, 0, 0, 0.08);
+  --button-shine-hover-glow: color-mix(in oklab, var(--primary) 48%, transparent);
+  --button-shine-hover-bg: rgb(255, 255, 255);
+  --button-shine-hover-fg: rgb(0, 0, 0);
 }
 
-.conic-cta-border:hover {
-  background-color: var(--conic-shell-hover-bg);
+.button-shine-sweep__label {
+  position: relative;
+  z-index: 2;
+}
+
+.button-shine-sweep[data-slot="button"]:hover,
+.button-shine-sweep[data-slot="button"]:focus-visible {
+  background-color: var(--button-shine-hover-bg) !important;
+  color: var(--button-shine-hover-fg) !important;
   box-shadow:
-    0 0 0.35rem var(--conic-hover-glow),
-    0 0 1rem var(--conic-hover-glow);
+    0 0 0.42rem var(--button-shine-hover-glow),
+    0 0 1.1rem var(--button-shine-hover-glow),
+    0 0 1.8rem color-mix(in oklab, var(--button-shine-hover-glow) 64%, transparent);
 }
 
-.conic-cta-border:hover::before {
+.button-shine-sweep[data-slot="button"]:hover::after,
+.button-shine-sweep[data-slot="button"]:focus-visible::after {
   animation-play-state: paused;
   opacity: 0;
 }
 
-.dark .conic-cta-border {
-  --conic-border-shine: rgba(255, 255, 255, 0.6);
-  --conic-hover-glow: color-mix(in oklab, var(--primary) 42%, transparent);
-  --conic-shell-hover-bg: color-mix(in oklab, var(--primary) 90%, var(--background) 10%);
-}
-
-.dark .conic-cta-border > [data-slot="button"] {
-  background-color: var(--primary) !important;
-  color: var(--primary-foreground) !important;
-}
-
-.dark .conic-cta-border > [data-slot="button"]:hover {
-  background-color: color-mix(in oklab, var(--primary) 90%, var(--background) 10%) !important;
-  color: var(--primary-foreground) !important;
-}
-
-.conic-cta-border-hero > [data-slot="button"] {
-  transition:
-    background-color 880ms ease,
-    color 380ms cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 380ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.conic-cta-border-hero > [data-slot="button"]:hover {
-  background-color: #000000 !important;
-  color: #ffffff !important;
-  border-color: transparent !important;
-}
-
-.dark .conic-cta-border-hero > [data-slot="button"]:hover {
-  background-color: #ffffff !important;
-  color: #000000 !important;
-  border-color: transparent !important;
-}
-
-.dark .conic-cta-border-hero {
-  --conic-shell-hover-bg: #ffffff;
+@media (prefers-reduced-motion: reduce) {
+  .button-shine-sweep[data-slot="button"]::after {
+    animation: none;
+  }
 }

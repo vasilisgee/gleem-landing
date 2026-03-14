@@ -1,8 +1,7 @@
 "use client"
 
 import type { FormEvent } from "react"
-import { Check, CircleCheckBig } from 'lucide-react'
-import { toast } from "sonner"
+import { Check, LoaderCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Input } from '@/components/ui/input'
@@ -10,6 +9,7 @@ import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 import { useState } from 'react'
 import Image from 'next/image'
 import { DotPattern } from '@/components/dot-pattern'
+import { showPeepSuccessToast } from "@/lib/peep-toast"
 import {
   Dialog,
   DialogContent,
@@ -21,11 +21,9 @@ import {
 export function PricingSection() {
   const [isYearly, setIsYearly] = useState(false)
   const [isLeadDialogOpen, setIsLeadDialogOpen] = useState(false)
-  const [selectedPlan, setSelectedPlan] = useState<string>("")
   const [isSubmittingLead, setIsSubmittingLead] = useState(false)
 
   function openLeadDialog(planName: string) {
-    setSelectedPlan(planName)
     setIsLeadDialogOpen(true)
   }
 
@@ -39,7 +37,6 @@ export function PricingSection() {
     }
 
     setIsSubmittingLead(true)
-    const planLabel = selectedPlan
 
     window.setTimeout(() => {
       form.reset()
@@ -47,21 +44,19 @@ export function PricingSection() {
       setIsSubmittingLead(false)
 
       window.setTimeout(() => {
-        toast.success("You're all set", {
-          description: `Your ${planLabel} request was received. We sent the next steps to your email.`,
-          icon: <CircleCheckBig className="size-4" />,
-          closeButton: true,
+        showPeepSuccessToast("Request received!", {
+          description: `Your website creation request was received. We sent the next steps to your email.`,
         })
       }, 350)
     }, 900)
   }
 
   return (
-    <section id="pricing" className="py-24 ">
+    <section id="pricing" className="py-24 scroll-mt-0 lg:scroll-mt-15">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="mx-auto max-w-md text-center mb-10 z-20 relative ">
           <Badge className="mb-4 bg-background border-foreground/30 text-foreground">Pricing Plan</Badge>
-          <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl mb-6">
+          <h2 className="text-5xl font-semibold tracking-tight sm:text-5xl mb-6">
             Simple and transparent pricing
           </h2>
           <p className="text-lg text-muted-foreground ">
@@ -78,11 +73,11 @@ export function PricingSection() {
               aria-hidden
               width={160}
               height={160}
-              className="pointer-events-none absolute left-15 -top-35 z-0 h-auto w-[100px]"
+              className="pointer-events-none absolute hidden lg:block lg:left-15 lg:-top-35 z-0 h-auto w-[60px] lg:w-[100px]"
             />
           <div className="border bg-card py-2 rounded-xl relative">
             <div className="grid items-start lg:grid-cols-2 relative z-20">
-              <div className="p-8 flex flex-col gap-6">
+              <div className="order-2 flex flex-col gap-6 p-8 lg:order-1">
               
                 {/* 
                 <div>
@@ -177,7 +172,7 @@ export function PricingSection() {
 
               </div>
 
-              <div className="p-8 py-10 flex flex-col gap-4 my-2 mx-4 rounded-xl bg-card border-transparent shadow-xl ring-1 ring-foreground/10 bg-gradient-to-r from-primary/8 to-secondary/8 lg:self-center">
+              <div className="order-1 my-2 mx-4 flex flex-col gap-4 rounded-xl border-transparent bg-card bg-gradient-to-r from-primary/8 to-secondary/8 p-8 py-10 shadow-xl ring-1 ring-foreground/10 lg:order-2 lg:self-center">
 
                 <div className="align-center text-center">
 
@@ -222,16 +217,14 @@ export function PricingSection() {
                   </div>
                 </div>
 
-                <div className="conic-cta-border conic-cta-border-hero w-full rounded-lg">
-                  <Button
-                    type="button"
-                    onClick={() => openLeadDialog("Website Care & Support")}
-                    className="w-full text-base cursor-pointer h-10 border border-transparent transition-colors duration-700 ease-out"
-                    variant="default"
-                  >
-                    Get your Website
-                  </Button>
-                </div>
+                <Button
+                  size="lg"
+                  type="button"
+                  onClick={() => openLeadDialog("Website Care & Support")}
+                  className="button-shine-sweep w-full text-base cursor-pointer"
+                >
+                  <span className="button-shine-sweep__label">Get your Website</span>
+                </Button>
                  {/* <div className="text-muted-foreground text-balance  text-center text-xs">
                       No contracts. Cancel anytime.
                   </div> */}
@@ -270,55 +263,79 @@ export function PricingSection() {
         </div>
 
         <Dialog open={isLeadDialogOpen} onOpenChange={setIsLeadDialogOpen}>
-          <DialogContent className="sm:max-w-2xl">
+          <DialogContent>
             <DialogHeader className="items-center text-center">
-              <DialogTitle className="text-5xl font-bold tracking-tight">
-                Get started
+              <DialogTitle className="text-4xl font-semibold tracking-tight mb-2 mt-5">
+                Get your Website
               </DialogTitle>
-              <DialogDescription className="text-base">
+              <DialogDescription className="text-base mb-5">
                 Enter your details and we&apos;ll send you the next steps.
               </DialogDescription>
             </DialogHeader>
 
-            <div className="rounded-2xl border bg-card p-6 sm:p-8">
-              <form onSubmit={handleLeadSubmit} className="space-y-5">
-                <input type="hidden" name="plan" value={selectedPlan} />
+            <div className="relative mx-auto w-full">
+              {/* <div className="pointer-events-none absolute left-1/2 top-20 h-44 w-[22%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/20 blur-3xl" /> */}
 
-                <div className="space-y-2">
-                  <label htmlFor="pricing-contact-name" className="text-sm font-medium">
-                    Your name
-                  </label>
-                  <Input
-                    id="pricing-contact-name"
-                    name="name"
-                    placeholder="John Doe"
-                    required
-                    minLength={2}
+              <div className="relative mx-auto flex w-full max-w-sm flex-col items-center mb-5 group">
+               
+                <div className="relative h-35 w-35 overflow-hidden rounded-full border bg-muted/60">
+                  <Image
+                    src="/peeps/peep-phone.svg"
+                    alt=""
+                    aria-hidden
+                    fill
+                    className="object-cover object-center scale-145 translate-y-5 transition duration-400 ease group-hover:translate-y-4"
                   />
                 </div>
+                <form onSubmit={handleLeadSubmit} className="mx-auto w-full max-w-[17.5rem] space-y-4">
+                 
+                  <div className="space-y-2">
+                    <label htmlFor="pricing-contact-name" className="text-[0.95rem] font-semibold tracking-tight inline-block mb-2">
+                      Your name
+                    </label>
+                    <Input
+                      id="pricing-contact-name"
+                      name="name"
+                      placeholder="John Doe"
+                      className="h-11 bg-white text-base dark:bg-input/30"
+                      required
+                      minLength={2}
+                    />
+                  </div>
 
-                <div className="space-y-2">
-                  <label htmlFor="pricing-contact-email" className="text-sm font-medium">
-                    Your email
-                  </label>
-                  <Input
-                    id="pricing-contact-email"
-                    name="email"
-                    type="email"
-                    placeholder="john@example.com"
-                    required
-                  />
-                </div>
+                  <div className="space-y-2">
+                    <label htmlFor="pricing-contact-email" className="text-[0.95rem] font-semibold tracking-tight inline-block mb-2">
+                      Your email
+                    </label>
+                    <Input
+                      id="pricing-contact-email"
+                      name="email"
+                      type="email"
+                      placeholder="john@example.com"
+                      className="h-11 bg-white text-base dark:bg-input/30"
+                      required
+                    />
+                  </div>
 
-                <Button type="submit" className="w-full" disabled={isSubmittingLead}>
-                  {isSubmittingLead ? "Sending..." : "Get started"}
-                </Button>
-              </form>
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="button-shine-sweep w-full cursor-pointer text-base mt-2"
+                    disabled={isSubmittingLead}
+                  >
+                    <span className="button-shine-sweep__label flex items-center justify-center gap-2">
+                      {isSubmittingLead ? <LoaderCircle className="size-4 animate-spin" /> : "Request Website"}
+                    </span>
+                  </Button>
+                </form>
+              </div>
             </div>
           </DialogContent>
         </Dialog>
 
-        <DotPattern className="opacity-60 z-0" size="md" fadeStyle="ellipse" /> 
+        {/* <DotPattern className="opacity-40 z-1" size="lg" fadeStyle="ellipse" />  */}
+        <div className="pointer-events-none absolute top-50 left-1/2 h-90 w-[40%] -translate-x-1/2 z-0 rounded-full bg-primary/20 blur-3xl " />
+            
       </div>
     </section>
   )

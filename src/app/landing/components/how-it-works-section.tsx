@@ -36,7 +36,7 @@ const values = [
     iconClassName: "h-6 w-6 mr-1 group-hover:scale-110",
     peepSrc: "/peeps/gleem-peep-step-2.webp",
     title: "A designer builds your site",
-    description: "A professional designer (not an AI) takes your info, generates professional visuals, and builds your website.",
+    description: "A professional designer takes your information, generates all the visuals, and builds your website.",
   },
   {
     iconSrc: "/icons/rocket.svg",
@@ -50,13 +50,13 @@ const values = [
 
 export function HowItWorksSection() {
   return (
-    <section id="how-it-works" className="scroll-mt-25 pt-10 pb-20">
+    <section id="how-it-works" className="scroll-mt-15 lg:scroll-mt-25 pt-10 pb-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-16 max-w-4xl text-center">
           <Badge className="mb-4 bg-background border-foreground/30 text-foreground">
             How it Works
           </Badge>
-          <h2 className="mb-6 text-4xl font-semibold tracking-tight sm:text-5xl">
+          <h2 className="mb-6 text-5xl font-semibold tracking-tight sm:text-5xl">
             Get your website in 3 easy steps
           </h2>
           <div className="mb-6 flex items-center justify-center gap-2">
@@ -67,7 +67,7 @@ export function HowItWorksSection() {
         <div className="mx-auto max-w-6xl">
           <div className="mb-12 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {values.map((value, index) => (
-              <Card key={index} className="group py-2 shadow-xs">
+              <Card key={index} className="group py-2 shadow-[0_12px_28px_-24px_color-mix(in_oklab,var(--primary)_70%,transparent)]">
                 <CardContent className="p-8">
                   <div className="flex flex-col items-center text-center">
                      <Badge className="mb-4 text-xs ">
@@ -76,14 +76,14 @@ export function HowItWorksSection() {
                     <div className="relative mb-6 flex h-36 w-36 items-end justify-center overflow-hidden rounded-full bg-muted/60 px-3 pt-3 pb-0">
                       <ThemedSvgIcon
                         src={value.iconSrc}
-                        className={`absolute right-3 top-9 z-20 text-primary transition-transform duration-200 ease-linear ${value.iconClassName}`}
+                        className={`absolute right-3 top-9 z-20 text-primary transition-transform duration-300 ease-linear ${value.iconClassName}`}
                       />
                       <Image
                         src={value.peepSrc}
                         alt=""
                         width={160}
                         height={160}
-                        className="h-[160px] w-auto object-contain translate-y-8 -translate-x-4"
+                        className="h-[160px] w-auto object-contain translate-y-10 transition duration-400 ease group-hover:-translate-x-5 -translate-x-7"
                       />
                     </div>
                     
