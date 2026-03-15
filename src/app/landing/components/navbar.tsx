@@ -37,6 +37,8 @@ const navigationItems: Array<{ name: string; href: string; hasMegaMenu?: boolean
   { name: 'FAQ', href: '#faq' },
 ]
 
+const MOBILE_SHEET_SCROLL_DELAY_MS = 325
+
 // Smooth scroll function
 const smoothScrollTo = (targetId: string) => {
   if (targetId.startsWith('#')) {
@@ -53,6 +55,20 @@ const smoothScrollTo = (targetId: string) => {
 export function LandingNavbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [megaMenuOpen, setMegaMenuOpen] = useState(false)
+
+  const closeSheetAndScroll = (targetId: string) => {
+    const activeElement = document.activeElement
+    if (activeElement instanceof HTMLElement) {
+      activeElement.blur()
+    }
+
+    setMegaMenuOpen(false)
+    setIsOpen(false)
+
+    window.setTimeout(() => {
+      smoothScrollTo(targetId)
+    }, MOBILE_SHEET_SCROLL_DELAY_MS)
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
@@ -145,8 +161,7 @@ export function LandingNavbar() {
                     className="flex items-center cursor-pointer"
                     onClick={(e: React.MouseEvent) => {
                       e.preventDefault()
-                      setIsOpen(false)
-                      setTimeout(() => smoothScrollTo("#hero"), 100)
+                      closeSheetAndScroll("#hero")
                     }}
                   >
                     <SheetTitle
@@ -188,10 +203,9 @@ export function LandingNavbar() {
                                       href={menuItem.href}
                                       className="flex items-center px-4 py-2 text-sm rounded-lg transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer"
                                       onClick={(e) => {
-                                        setIsOpen(false)
                                         if (menuItem.href.startsWith('#')) {
                                           e.preventDefault()
-                                          setTimeout(() => smoothScrollTo(menuItem.href), 100)
+                                          closeSheetAndScroll(menuItem.href)
                                         }
                                       }}
                                     >
@@ -208,10 +222,9 @@ export function LandingNavbar() {
                           href={item.href}
                           className="flex items-center px-4 py-3 text-base font-medium rounded-lg transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer"
                           onClick={(e) => {
-                            setIsOpen(false)
                             if (item.href.startsWith('#')) {
                               e.preventDefault()
-                              setTimeout(() => smoothScrollTo(item.href), 100)
+                              closeSheetAndScroll(item.href)
                             }
                           }}
                         >
@@ -231,8 +244,7 @@ export function LandingNavbar() {
                         href="#pricing"
                         onClick={(e: React.MouseEvent) => {
                           e.preventDefault()
-                          setIsOpen(false)
-                          setTimeout(() => smoothScrollTo("#pricing"), 100)
+                          closeSheetAndScroll("#pricing")
                         }}
                       >
                         Get Started

@@ -87,7 +87,7 @@ export function FeaturesSection() {
               ))}
             </ul>
 
-            <div className="flex flex-row gap-4 pt-5">
+            <div className="flex flex-col lg:flex-row gap-4 pt-5">
               <Button size="lg" variant="secondary" className="cursor-pointer">
                 <a href="https://thegreekrestaurant.vercel.app/login" target="_blank" className='flex items-center'>
                   Try Admin Panel

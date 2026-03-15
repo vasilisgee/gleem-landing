@@ -36,7 +36,7 @@ export function Image3D({
     if (slideCount <= 1) return
     const timerId = window.setInterval(() => {
       setSlideIndex((current) => (current + 1) % slideCount)
-    }, 3500)
+    }, 2000)
     return () => window.clearInterval(timerId)
   }, [slideCount])
 
