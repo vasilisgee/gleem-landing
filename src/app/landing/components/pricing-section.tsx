@@ -8,7 +8,6 @@ import { Input } from '@/components/ui/input'
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 import { useState } from 'react'
 import Image from 'next/image'
-import { DotPattern } from '@/components/dot-pattern'
 import { showPeepSuccessToast } from "@/lib/peep-toast"
 import {
   Dialog,
@@ -60,10 +59,8 @@ export function PricingSection() {
             Simple and transparent pricing
           </h2>
           <p className="text-lg text-muted-foreground ">
-            
             Pay only for hosting and support.
           </p>
-
         </div>
 
         <div className="mx-auto max-w-3xl z-20 relative ">
@@ -78,24 +75,6 @@ export function PricingSection() {
           <div className="border bg-card py-2 rounded-xl relative">
             <div className="grid items-start lg:grid-cols-2 relative z-20">
               <div className="order-2 flex flex-col gap-6 p-8 lg:order-1">
-              
-                {/* 
-                <div>
-                  <div className="text-4xl font-bold mb-1">$0</div>
-                  <div className="text-muted-foreground text-sm">One-time</div>
-                </div>
-
-                <div>
-                  <Button
-                    type="button"
-                    onClick={() => openLeadDialog("Website Launch")}
-                    className="w-full cursor-pointer my-2 shadow-sm shadow-black/15 border border-transparent bg-background ring-1 ring-foreground/10 hover:bg-muted/50"
-                    variant="secondary"
-                  >
-                    Get your Website
-                  </Button>
-                </div> */}
-
                 <div>
                   <div className="text-xl font-medium tracking-tight mb-2">What you get</div>
                   <div className="text-muted-foreground text-balance text-sm">
@@ -125,11 +104,6 @@ export function PricingSection() {
                       <Check className="text-muted-foreground size-4 flex-shrink-0" strokeWidth={2.5} />
                       <span>Updates, security & maintenance</span>
                     </li>
-                    {/* <li className="flex items-center gap-3">
-                      <Check className="text-muted-foreground size-4 flex-shrink-0" strokeWidth={2.5} />
-                      <span>Simple site analytics</span>
-                    </li> */}
-                 
                     <li className="flex items-center gap-3">
                       <Check className="text-muted-foreground size-4 flex-shrink-0" strokeWidth={2.5} />
                       <span>Talk-to-a-human support</span>
@@ -137,39 +111,6 @@ export function PricingSection() {
                     
                   </ul>
                 </div>
-
-{/* 
-                <div>
-                  <div className="text-xl font-medium tracking-tight mb-2 mt-2">Care & Support</div>
-                  <div className="text-muted-foreground text-balance text-sm">
-                    We keep your site fast and accessible.
-                  </div>
-                </div>
-
-                <div>
-                  <ul role="list" className="space-y-3 text-sm">
-                    <li className="flex items-center gap-3">
-                      <Check className="text-muted-foreground size-4 flex-shrink-0" strokeWidth={2.5} />
-                      <span>Lightning fast global hosting</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <Check className="text-muted-foreground size-4 flex-shrink-0" strokeWidth={2.5} />
-                      <span>Updates, security & maintenance</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <Check className="text-muted-foreground size-4 flex-shrink-0" strokeWidth={2.5} />
-                      <span>Simple site analytics</span>
-                    </li>
-                 
-                    <li className="flex items-center gap-3">
-                      <Check className="text-muted-foreground size-4 flex-shrink-0" strokeWidth={2.5} />
-                      <span>Talk-to-a-human support</span>
-                    </li>
-                   
-                  </ul>
-                </div> */}
-
-
               </div>
 
               <div className="order-1 my-2 mx-4 flex flex-col gap-4 rounded-xl border-transparent bg-card bg-gradient-to-r from-primary/8 to-secondary/8 p-8 py-10 shadow-xl ring-1 ring-foreground/10 lg:order-2 lg:self-center">
@@ -198,14 +139,7 @@ export function PricingSection() {
                     </ToggleGroup>
                   </div>
 
-
                   <div className="text-3xl font-medium tracking-tighter mb-2 font-display">All-in-one Plan</div>
-
-                  {/* <div className="text-muted-foreground text-balance text-sm">
-                    Save 20% On Annual Billing
-                  </div> */}
-                 
-
                   <p className="text-sm text-muted-foreground">
                     <span className="text-primary font-semibold text-xs">Save 20%</span> with annual billing
                   </p>
@@ -225,38 +159,6 @@ export function PricingSection() {
                 >
                   <span className="button-shine-sweep__label">Get your Website</span>
                 </Button>
-                 {/* <div className="text-muted-foreground text-balance  text-center text-xs">
-                      No contracts. Cancel anytime.
-                  </div> */}
-
-                {/* <div>
-                  <ul role="list" className="space-y-3 text-sm">
-                    <li className="flex items-center gap-3">
-                      <Check className="text-muted-foreground size-4 flex-shrink-0" strokeWidth={2.5} />
-                      <span>Lightning fast global hosting</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <Check className="text-muted-foreground size-4 flex-shrink-0" strokeWidth={2.5} />
-                      <span>Full technical maintenance</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <Check className="text-muted-foreground size-4 flex-shrink-0" strokeWidth={2.5} />
-                      <span>Simple site analytics</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <Check className="text-muted-foreground size-4 flex-shrink-0" strokeWidth={2.5} />
-                      <span>Easy content updates</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <Check className="text-muted-foreground size-4 flex-shrink-0" strokeWidth={2.5} />
-                      <span>Talk-to-a-human support</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <Check className="text-muted-foreground size-4 flex-shrink-0" strokeWidth={2.5} />
-                      <span>Cancel anytime you want</span>
-                    </li>
-                  </ul>
-                </div> */}
               </div>
             </div>
           </div>
@@ -274,8 +176,6 @@ export function PricingSection() {
             </DialogHeader>
 
             <div className="relative mx-auto w-full">
-              {/* <div className="pointer-events-none absolute left-1/2 top-20 h-44 w-[22%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/20 blur-3xl" /> */}
-
               <div className="relative mx-auto flex w-full max-w-sm flex-col items-center mb-5 group">
                
                 <div className="relative h-35 w-35 overflow-hidden rounded-full border bg-muted/60">
@@ -332,8 +232,6 @@ export function PricingSection() {
             </div>
           </DialogContent>
         </Dialog>
-
-        {/* <DotPattern className="opacity-40 z-1" size="lg" fadeStyle="ellipse" />  */}
         <div className="pointer-events-none absolute top-50 left-1/2 h-90 w-[40%] -translate-x-1/2 z-0 rounded-full bg-primary/20 blur-3xl " />
             
       </div>

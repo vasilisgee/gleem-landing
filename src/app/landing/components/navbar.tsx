@@ -28,11 +28,8 @@ import { MegaMenu, megaMenuSections } from '@/components/landing/mega-menu'
 
 const navigationItems: Array<{ name: string; href: string; hasMegaMenu?: boolean }> = [
   { name: 'Home', href: '#hero' },
-  // { name: 'How it works', href: '#how-it-works' },
-  // { name: 'Why us', href: '#gleem-way' },
   { name: "Services", href: '#what-included', hasMegaMenu: true },
   { name: 'Pricing', href: '#pricing' },
-  // { name: "What's included", href: '#features' },
   { name: 'Team', href: '#team' },
   { name: 'FAQ', href: '#faq' },
 ]

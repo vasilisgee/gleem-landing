@@ -38,13 +38,7 @@ export const megaMenuSections: MegaMenuSection[] = [
         icon: Sparkles,
         href: "#gleem-way",
       },
-     
-    ],
-  },
-  {
-    title: "",
-    items: [
-      {
+       {
         title: "What we Offer",
         description: "Everything a local business needs.",
         icon: ListChecks ,
@@ -56,9 +50,8 @@ export const megaMenuSections: MegaMenuSection[] = [
         icon: Gift,
         href: "#features",
       },
-     
     ],
-  },
+  }
 ]
 
 function smoothScrollTo(targetId: string) {
@@ -83,8 +76,8 @@ export function MegaMenu() {
   }
 
   return (
-    <aside className="w-[640px] max-w-[95vw] rounded-3xl p-1">
-      <div className="relative overflow-hidden rounded-md border border-border/60 bg-muted/40 px-4 py-4 backdrop-blur-sm sm:px-5 sm:py-5">
+    <aside className="w-[280px] rounded-3xl p-1">
+      <div className="relative overflow-hidden rounded-md border border-border/60 bg-muted/40 p-3">
         <div
           className="mega-menu-shine-ring mega-menu-shine-animate pointer-events-none absolute inset-0 size-full rounded-[inherit] will-change-[background-position]"
           style={
@@ -105,12 +98,9 @@ export function MegaMenu() {
           }
         />
 
-        <div className="relative z-10 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:gap-10">
+        <div className="relative z-10">
           {megaMenuSections.map((section) => (
             <div key={section.title} className="space-y-4">
-              {/* <h3 className="text-sm font-semibold tracking-wide text-muted-foreground uppercase">
-                {section.title}
-              </h3> */}
 
               <div className="space-y-2">
                 {section.items.map((item) => (

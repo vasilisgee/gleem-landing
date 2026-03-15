@@ -7,8 +7,16 @@ import { Toaster } from "@/components/ui/sonner";
 import { dmSans, playfairDisplay } from "@/lib/fonts";
 
 export const metadata: Metadata = {
-  title: "gleem-landing",
-  description: "Landing page project built with Next.js and shadcn/ui.",
+    title: "Gleem - Free Websites for Local Businesses",
+    description: "We design and launch your one-page business website in 72 hours. You only pay $9/month for hosting and support.",
+    keywords: "small business website, local business website, affordable web design, one page website",
+    openGraph: {
+      title: "Gleem - Free Websites for Local Businesses",
+      description: "Professional website design for local businesses. Launched in 72 hours, $9/month.",
+      url: "https://getgleem.vercel.app",
+      siteName: "Gleem",
+      type: "website",
+    }
 };
 
 export default function RootLayout({

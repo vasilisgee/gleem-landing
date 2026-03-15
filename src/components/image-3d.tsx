@@ -72,7 +72,6 @@ export function Image3D({
                   width={SCREENSHOT_WIDTH}
                   height={SCREENSHOT_HEIGHT}
                   sizes="(min-width: 1280px) 620px, (min-width: 1024px) calc(50vw - 3rem), 100vw"
-                  quality={100}
                   unoptimized
                   className={cn(
                     "absolute inset-0 size-full object-cover object-top [image-rendering:auto] transition-opacity duration-700 motion-reduce:transition-none",
@@ -92,7 +91,6 @@ export function Image3D({
                   width={SCREENSHOT_WIDTH}
                   height={SCREENSHOT_HEIGHT}
                   sizes="(min-width: 1280px) 620px, (min-width: 1024px) calc(50vw - 3rem), 100vw"
-                  quality={100}
                   unoptimized
                   className={cn(
                     "absolute inset-0 size-full object-cover object-top [image-rendering:auto] transition-opacity duration-700 motion-reduce:transition-none",

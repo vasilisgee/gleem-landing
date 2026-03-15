@@ -5,59 +5,87 @@ import { Card } from "@/components/ui/card"
 import { Badge } from '@/components/ui/badge'
 import { Star } from "lucide-react"
 
-type LogoId =
-  | "hearthplate"
-  | "cornercup"
-  | "brightwire"
-  | "clearflow"
-  | "freshnest"
-  | "glowbar"
-  | "pawporch"
-  | "oakline"
-  | "greenroute"
-  | "safekey"
-  | "swiftcoat"
-  | "peakroof"
+const companies = [
+  {
+    id: "company-1",
+    name: "Hearth Kitchen",
+    category: "Restaurant & Dining",
+    logo: { src: "/logos/logoipsum-293.svg", width: 20, height: 15 },
+  },
+  {
+    id: "company-2",
+    name: "Cornerstone Café",
+    category: "Café & Coffee Shop",
+    logo: { src: "/logos/logoipsum-296.svg", width: 20, height: 20 },
+  },
+  {
+    id: "company-3",
+    name: "Volta Electric Co.",
+    category: "Electrical Services",
+    logo: { src: "/logos/logoipsum-327.svg", width: 20, height: 20 },
+  },
+  {
+    id: "company-4",
+    name: "AquaFix Plumbing",
+    category: "Plumbing & Pipework",
+    logo: { src: "/logos/logoipsum-424.svg", width: 20, height: 20 },
+  },
+  {
+    id: "company-5",
+    name: "CleanSlate Pro",
+    category: "Cleaning Services",
+    logo: { src: "/logos/logoipsum-355.svg", width: 16, height: 21 },
+  },
+  {
+    id: "company-6",
+    name: "Velvet Beauty",
+    category: "Beauty & Wellness",
+    logo: { src: "/logos/logoipsum-363.svg", width: 50, height: 20 },
+  },
+  {
+    id: "company-7",
+    name: "Happy Tails",
+    category: "Pet Care & Grooming",
+    logo: { src: "/logos/logoipsum-370.svg", width: 31, height: 20 },
+  },
+  {
+    id: "company-8",
+    name: "CityLock",
+    category: "Locksmith & Security",
+    logo: { src: "/logos/logoipsum-381.svg", width: 20, height: 20 },
+  },
+  {
+    id: "company-9",
+    name: "PrimeCoat Painters",
+    category: "Painting & Decorating",
+    logo: { src: "/logos/logoipsum-394.svg", width: 20, height: 20 },
+  },
+  {
+    id: "company-10",
+    name: "SkyLine Roofing Co.",
+    category: "Roofing & Exteriors",
+    logo: { src: "/logos/logoipsum-411.svg", width: 20, height: 20 },
+  },
+] as const
 
-const companies: ReadonlyArray<{ name: string; category: string; id: LogoId }> = [
-  { name: "Hearth Kitchen", category: "Restaurant & Dining", id: "hearthplate" },
-  { name: "Cornerstone Café", category: "Café & Coffee Shop", id: "cornercup" },
-  { name: "Volta Electric Co.", category: "Electrical Services", id: "brightwire" },
-  { name: "AquaFix Plumbing", category: "Plumbing & Pipework", id: "clearflow" },
-  { name: "CleanSlate Pro", category: "Cleaning Services", id: "freshnest" },
-  { name: "Velvet Beauty", category: "Beauty & Wellness", id: "glowbar" },
-  { name: "Happy Tails", category: "Pet Care & Grooming", id: "pawporch" },
-  { name: "CityLock", category: "Locksmith & Security", id: "safekey" },
-  { name: "PrimeCoat Painters", category: "Painting & Decorating", id: "swiftcoat" },
-  { name: "SkyLine Roofing Co.", category: "Roofing & Exteriors", id: "peakroof" },
-]
-
-const logoMarks: Record<LogoId, { src: string; width: number; height: number }> = {
-  hearthplate: { src: "/logos/logoipsum-293.svg", width: 20, height: 15 },
-  cornercup: { src: "/logos/logoipsum-296.svg", width: 20, height: 20 },
-  brightwire: { src: "/logos/logoipsum-327.svg", width: 20, height: 20 },
-  clearflow: { src: "/logos/logoipsum-424.svg", width: 20, height: 20 },
-  freshnest: { src: "/logos/logoipsum-355.svg", width: 16, height: 21 },
-  glowbar: { src: "/logos/logoipsum-363.svg", width: 50, height: 20 },
-  pawporch: { src: "/logos/logoipsum-370.svg", width: 31, height: 20 },
-  oakline: { src: "/logos/logoipsum-374.svg", width: 20, height: 20 },
-  greenroute: { src: "/logos/logoipsum-379.svg", width: 20, height: 20 },
-  safekey: { src: "/logos/logoipsum-381.svg", width: 20, height: 20 },
-  swiftcoat: { src: "/logos/logoipsum-394.svg", width: 20, height: 20 },
-  peakroof: { src: "/logos/logoipsum-411.svg", width: 20, height: 20 },
-}
-
-function LogoMark({ id }: { id: LogoId }) {
-  const logo = logoMarks[id]
+function LogoMark({
+  src,
+  width,
+  height,
+}: {
+  src: string
+  width: number
+  height: number
+}) {
 
   return (
     <span className="inline-flex shrink-0 w-5 items-center justify-center">
       <Image
-        src={logo.src}
+        src={src}
         alt=""
         aria-hidden
-        width={logo.width}
-        height={logo.height}
+        width={width}
+        height={height}
         className="logo-carousel-mark h-auto w-auto shrink-0"
       />
     </span>
@@ -72,9 +100,6 @@ export function LogoCarousel() {
     <section className="pb-12 pt-0 sm:pb-16 lg:pb-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          {/* <p className="mb-8 text-sm font-medium text-muted-foreground">
-            Trusted by local service businesses
-          </p> */}
           <div className='flex flex-col items-center gap-4 mb-8'>
             <Badge variant='outline' className='flex items-center gap-2 bg-primary/5 text-accent-foreground p-1.5 px-3 rounded-full'>
               <Star className='' />
@@ -88,9 +113,9 @@ export function LogoCarousel() {
             <div className="overflow-hidden">
               <div className="flex w-max items-center gap-8 sm:gap-12 animate-logo-scroll cursor-default">
                 <div className="flex items-center gap-8 sm:gap-12">
-                  {companies.map((company, index) => (
+                  {companies.map((company) => (
                     <Card
-                      key={`first-${index}`}
+                      key={`first-${company.id}`}
                       className={cardClassName}
                     >
                       <Badge
@@ -100,7 +125,7 @@ export function LogoCarousel() {
                         {company.category}
                       </Badge>
                       <div className="flex min-w-0 items-center justify-center gap-1">
-                        <LogoMark id={company.id} />
+                        <LogoMark {...company.logo} />
                         <span className="whitespace-nowrap text-sm font-semibold tracking-tight text-foreground">
                           {company.name}
                         </span>
@@ -110,9 +135,9 @@ export function LogoCarousel() {
                 </div>
 
                 <div className="flex items-center gap-8 sm:gap-12">
-                  {companies.map((company, index) => (
+                  {companies.map((company) => (
                     <Card
-                      key={`second-${index}`}
+                      key={`second-${company.id}`}
                       className={cardClassName}
                     >
                       <Badge
@@ -122,7 +147,7 @@ export function LogoCarousel() {
                         {company.category}
                       </Badge>
                       <div className="flex min-w-0 items-center justify-center gap-1">
-                        <LogoMark id={company.id} />
+                        <LogoMark {...company.logo} />
                         <span className="whitespace-nowrap text-sm font-semibold tracking-tight text-foreground">
                           {company.name}
                         </span>

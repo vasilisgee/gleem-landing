@@ -72,7 +72,6 @@ export function WhatIncludedSection() {
             </p>
           </div>
 
-          {/* Included Features Grid */}
           <div className="relative">
             <Image
               src="/peeps/gleem-peep-sit-2.webp"

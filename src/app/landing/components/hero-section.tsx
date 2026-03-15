@@ -67,11 +67,6 @@ export function HeroSection() {
                 </a>
               </Button>
             </div>
-
-            {/* <p className="text-sm text-muted-foreground">
-              No contracts. Cancel anytime.
-            </p> */}
-           
         </div>
 
         <div className="mx-auto mt-20 max-w-6xl">

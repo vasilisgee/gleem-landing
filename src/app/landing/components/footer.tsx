@@ -3,13 +3,10 @@
 import {
   PiFacebookLogo,
   PiInstagramLogo,
-  PiLinkedinLogo,
   PiTiktokLogo 
 } from "react-icons/pi"
 
 const socialLinks = [
-
-  // { name: "LinkedIn", href: "https://www.linkedin.com", icon: PiLinkedinLogo },
   { name: "Facebook", href: "https://www.facebook.com", icon: PiFacebookLogo },
   { name: "Instagram", href: "https://www.instagram.com", icon: PiInstagramLogo },
   { name: "TikTok", href: "https://www.instagram.com", icon: PiTiktokLogo },
