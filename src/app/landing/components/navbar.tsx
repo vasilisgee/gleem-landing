@@ -103,6 +103,7 @@ export function LandingNavbar() {
                   </>
                 ) : (
                   <NavigationMenuLink
+                    href={item.href}
                     className="group inline-flex h-10 w-max items-center justify-center px-4 py-2 text-sm font-bold transition-colors hover:text-primary focus:text-primary focus:outline-none cursor-pointer"
                     onClick={(e: React.MouseEvent) => {
                       e.preventDefault()
