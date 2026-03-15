@@ -42,7 +42,7 @@ export function ContactSection({ onSubmitted }: ContactSectionProps) {
 
       window.setTimeout(() => {
         showPeepSuccessToast("Thanks for reaching out!", {
-          description: "We’ll reply within a few hours during business days.",
+          description: "We'll get back to you within few hours during business days.",
         })
       }, 350)
     }, 900)

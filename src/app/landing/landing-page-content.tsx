@@ -1,5 +1,3 @@
-"use client"
-
 import { LandingNavbar } from './components/navbar'
 import { HeroSection } from './components/hero-section'
 import { LogoCarousel } from './components/logo-carousel'

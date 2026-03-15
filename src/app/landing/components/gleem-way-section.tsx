@@ -1,25 +1,7 @@
-"use client"
-
 import type { CSSProperties } from "react"
 import { Check, X, ThumbsUp, ThumbsDown } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
-
-function ThemedSvgIcon({ src, className }: { src: string; className?: string }) {
-  const iconMaskStyle: CSSProperties = {
-    backgroundColor: "currentColor",
-    WebkitMaskImage: `url(${src})`,
-    maskImage: `url(${src})`,
-    WebkitMaskRepeat: "no-repeat",
-    maskRepeat: "no-repeat",
-    WebkitMaskPosition: "center",
-    maskPosition: "center",
-    WebkitMaskSize: "contain",
-    maskSize: "contain",
-  }
-
-  return <span aria-hidden className={className} style={iconMaskStyle} />
-}
 
 const websiteBuilderPainPoints = [
   "Time-consuming to learn",

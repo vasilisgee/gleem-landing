@@ -1,5 +1,3 @@
-"use client"
-
 import Image from "next/image"
 import type { LucideIcon } from "lucide-react"
 import { BookOpen, ClipboardList, LayoutGrid, MapPin, Rocket, Search } from "lucide-react"

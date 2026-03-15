@@ -22,7 +22,7 @@ export function PricingSection() {
   const [isLeadDialogOpen, setIsLeadDialogOpen] = useState(false)
   const [isSubmittingLead, setIsSubmittingLead] = useState(false)
 
-  function openLeadDialog(planName: string) {
+  function openLeadDialog() {
     setIsLeadDialogOpen(true)
   }
 
@@ -154,7 +154,7 @@ export function PricingSection() {
                 <Button
                   size="lg"
                   type="button"
-                  onClick={() => openLeadDialog("Website Care & Support")}
+                  onClick={openLeadDialog}
                   className="button-shine-sweep w-full text-base cursor-pointer"
                 >
                   <span className="button-shine-sweep__label">Get your Website</span>

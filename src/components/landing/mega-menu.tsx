@@ -2,12 +2,10 @@
 
 import type { ComponentType, CSSProperties, MouseEvent } from "react"
 import {
-  LayoutGrid,
   ListChecks,
   Rocket,
   Sparkles,
   Gift,
-  WandSparkles,
 } from "lucide-react"
 
 type MegaMenuItem = {
