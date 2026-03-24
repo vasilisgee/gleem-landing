@@ -110,7 +110,7 @@ export function MegaMenu() {
                   >
                     <div className="flex items-center gap-2">
                       <item.icon className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-primary" />
-                      <span className="text-sm font-medium text-foreground transition-colors group-hover:text-primary">
+                      <span className="text-sm font-semibold text-foreground transition-colors group-hover:text-primary">
                         {item.title}
                       </span>
                     </div>

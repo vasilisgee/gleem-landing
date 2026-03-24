@@ -1,5 +1,6 @@
 "use client"
 
+import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -79,12 +80,16 @@ export function LandingNavbar() {
               smoothScrollTo("#hero")
             }}
           >
-            <span
+            <motion.span
               className="font-extrabold font-display leading-tight text-3xl -mt-1"
               style={{ letterSpacing: "-0.02em" }}
+              initial={{ opacity: 0, y: 8, filter: 'blur(8px)' }}
+              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, ease: 'easeOut' }}
             >
               gleem<span className="logo-dot-glow ml-1 text-3xl!">.</span>
-            </span>
+            </motion.span>
           </a>
         </div>
 
@@ -191,9 +196,6 @@ export function LandingNavbar() {
                           <CollapsibleContent className="pl-4">
                             {megaMenuSections.map((section) => (
                               <div key={section.title} className="">
-                                {/* <div className="px-4 py-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground/60">
-                                  {section.title}
-                                </div> */}
                                 <div className="space-y-1">
                                   {section.items.map((menuItem) => (
                                     <a

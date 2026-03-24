@@ -1,4 +1,8 @@
+"use client"
+
+import { motion } from "framer-motion"
 import Image from "next/image"
+import type { CSSProperties } from "react"
 import type { LucideIcon } from "lucide-react"
 import { BookOpen, ClipboardList, LayoutGrid, MapPin, Rocket, Search } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
@@ -62,41 +66,105 @@ export function WhatIncludedSection() {
             <Badge className="mb-4 bg-background border-foreground/30 text-foreground">
              What we Offer
             </Badge>
-            <h2 className="text-5xl font-bold tracking-tight mb-6">
-              Everything you need to shine online
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl">
-              We build exactly what small businesses need to look professional and capture leads without the complexity.
-            </p>
+            <motion.div
+              initial={{ opacity: 0, filter: "blur(10px)" }}
+              whileInView={{ opacity: 1, filter: "blur(0px)" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.55, ease: "easeOut" }}
+            >
+              <h2 className="text-5xl font-bold tracking-tight mb-6">
+                Everything you need to shine online
+              </h2>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: 0.12 }}
+            >
+              <p className="text-lg text-muted-foreground max-w-2xl">
+                We build exactly what small businesses need to look professional and capture leads without the complexity.
+              </p>
+            </motion.div>
           </div>
 
           <div className="relative">
-            <Image
-              src="/peeps/gleem-peep-sit-2.webp"
-              alt=""
-              aria-hidden
-              width={160}
-              height={160}
-              className="pointer-events-none absolute right-2 lg:-top-38 -top-18 z-20 -scale-x-100 h-auto w-[65px] lg:w-[130px]"
-            />
-            <div className="relative z-10 grid grid-cols-1 gap-6 lg:grid-cols-3">
-              {includedItems.map((item) => (
-                <Card
-                  key={item.title}
-                  className={cn(
-                    "group relative overflow-hidden py-0 shadow-none transition-all duration-500 hover:shadow-[0_12px_32px_hsl(var(--foreground)/0.08)] before:pointer-events-none before:absolute before:inset-0 before:z-0 before:-translate-x-[130%] before:bg-[linear-gradient(115deg,transparent,rgba(0,0,0,0.08),transparent)] before:transition-transform before:duration-700 hover:before:translate-x-[130%] dark:before:bg-[linear-gradient(115deg,transparent,rgba(255,255,255,0.2),transparent)] cursor-default",
-                    item.cardClassName
-                  )}
-                >
-                  <CardContent className="relative z-10 p-8">
-                    <h3 className="mb-4 flex items-center gap-2 text-lg text-foreground font-medium">
-                      <item.icon className="h-4 w-4 text-primary" aria-hidden />
-                      <span>{item.title}</span>
-                    </h3>
-                    <p className="text-muted-foreground text-sm ">{item.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
+            <motion.div
+              className="pointer-events-none absolute right-2 lg:-top-38 -top-18 z-50"
+              initial={{ opacity: 0, y: -14, filter: "blur(12px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.55, ease: "easeOut", delay: 0.2 }}
+            >
+              <Image
+                src="/peeps/gleem-peep-sit-2.webp"
+                alt=""
+                aria-hidden
+                width={160}
+                height={160}
+                className="-scale-x-100 h-auto w-[65px] lg:w-[130px]"
+              />
+            </motion.div>
+            <div className="relative z-10 grid grid-cols-1 gap-3 lg:gap-6 lg:grid-cols-3">
+              {includedItems.map((item) => {
+                const isRotatedCard = item.cardClassName === "lg:rotate-2"
+
+                return (
+                  isRotatedCard ? (
+                    <motion.div
+                      key={item.title}
+                      className="lg:[rotate:var(--included-card-rotate)]"
+                      style={{ "--included-card-rotate": "0deg" } as CSSProperties}
+                      initial={
+                        {
+                          "--included-card-rotate": "0deg",
+                        } as {
+                          "--included-card-rotate": string
+                        }
+                      }
+                      whileInView={
+                        {
+                          "--included-card-rotate": "2deg",
+                        } as {
+                          "--included-card-rotate": string
+                        }
+                      }
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.2, ease: "easeOut", delay: 0.40}}
+                    >
+                      <Card
+                        className={cn(
+                          "group relative overflow-hidden py-0 shadow-none transition-all duration-500 hover:shadow-[0_12px_32px_hsl(var(--foreground)/0.08)] before:pointer-events-none before:absolute before:inset-0 before:z-0 before:-translate-x-[130%] before:bg-[linear-gradient(115deg,transparent,rgba(0,0,0,0.08),transparent)] before:transition-transform before:duration-700 hover:before:translate-x-[130%] dark:before:bg-[linear-gradient(115deg,transparent,rgba(255,255,255,0.2),transparent)]"
+                        )}
+                      >
+                        <CardContent className="relative z-10 p-8">
+                          <h3 className="mb-4 flex items-center gap-2 text-lg text-foreground font-medium">
+                            <item.icon className="h-4 w-4 text-primary" aria-hidden />
+                            <span>{item.title}</span>
+                          </h3>
+                          <p className="text-muted-foreground text-sm ">{item.description}</p>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  ) : (
+                    <Card
+                      key={item.title}
+                      className={cn(
+                        "group relative overflow-hidden py-0 shadow-none transition-all duration-500 hover:shadow-[0_12px_32px_hsl(var(--foreground)/0.08)] before:pointer-events-none before:absolute before:inset-0 before:z-0 before:-translate-x-[130%] before:bg-[linear-gradient(115deg,transparent,rgba(0,0,0,0.08),transparent)] before:transition-transform before:duration-700 hover:before:translate-x-[130%] dark:before:bg-[linear-gradient(115deg,transparent,rgba(255,255,255,0.2),transparent)]",
+                        item.cardClassName
+                      )}
+                    >
+                      <CardContent className="relative z-10 p-8">
+                        <h3 className="mb-4 flex items-center gap-2 text-lg text-foreground font-medium">
+                          <item.icon className="h-4 w-4 text-primary" aria-hidden />
+                          <span>{item.title}</span>
+                        </h3>
+                        <p className="text-muted-foreground text-sm ">{item.description}</p>
+                      </CardContent>
+                    </Card>
+                  )
+                )
+              })}
             </div>
           </div>
         </div>

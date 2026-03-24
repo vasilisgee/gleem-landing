@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import dynamic from "next/dynamic"
+import { motion } from "framer-motion"
 import Image from "next/image"
 import { CircleHelp, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -20,10 +21,18 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import { LoadingSpinner } from "@/components/ui/loading-spinner"
 
 const ContactSection = dynamic(
   () => import("./contact-section").then((module) => module.ContactSection),
-  { ssr: false }
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex min-h-[50vh] items-center justify-center">
+        <LoadingSpinner size="md" />
+      </div>
+    ),
+  }
 )
 
 type FaqItem = {
@@ -82,12 +91,26 @@ const FaqSection = () => {
           <Badge className="mb-4 bg-background border-foreground/30 text-foreground">
             FAQ
           </Badge>
-          <h2 className="text-5xl font-semibold tracking-tight mb-6">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-md text-muted-foreground">
-            Everything you need to know about our services.
-          </p>
+          <motion.div
+            initial={{ opacity: 0, filter: "blur(10px)" }}
+            whileInView={{ opacity: 1, filter: "blur(0px)" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55, ease: "easeOut" }}
+          >
+            <h2 className="text-5xl font-semibold tracking-tight mb-6">
+              Frequently Asked Questions
+            </h2>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.12 }}
+          >
+            <p className="text-md text-muted-foreground">
+              Everything you need to know about our services.
+            </p>
+          </motion.div>
         </div>
 
         {/* FAQ Content */}
@@ -125,25 +148,47 @@ const FaqSection = () => {
 
             <div className="flex flex-col items-center lg:h-full lg:justify-center">
               <div className="flex items-end justify-center">
-                <Image
-                  src="/peeps/gleem-peep-sit-4.webp"
-                  alt="Placeholder character illustration"
-                  width={120}
-                  height={0}
-                  className="h-auto w-full max-w-[135px] -scale-x-100 left-5 relative z-10"
-                  priority={false}
-                />
-                <Image
-                  src="/peeps/gleem-peep-stand-3.webp"
-                  alt="Placeholder character illustration"
-                  width={100}
-                  height={0}
-                  className="h-auto w-full max-w-[110px] relative -left-8 z-0 -scale-x-100"
-                  priority={false}
-                />
+                <motion.div
+                  className="relative left-5 z-10"
+                  initial={{ opacity: 0,  }}
+                  whileInView={{ opacity: 1}}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.95, ease: "easeOut", delay: 0.56 }}
+                >
+                  <Image
+                    src="/peeps/gleem-peep-sit-4.webp"
+                    alt="Placeholder character illustration"
+                    width={120}
+                    height={0}
+                    className="h-auto w-full max-w-[135px] -scale-x-100"
+                    priority={false}
+                  />
+                </motion.div>
+                <motion.div
+                  className="relative -left-8 z-0"
+                  initial={{ opacity: 0, x: 16 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.85, ease: "easeOut", delay: 0.86 }}
+                >
+                  <Image
+                    src="/peeps/gleem-peep-stand-3.webp"
+                    alt="Placeholder character illustration"
+                    width={100}
+                    height={0}
+                    className="h-auto w-full max-w-[110px] -scale-x-100"
+                    priority={false}
+                  />
+                </motion.div>
               </div>
               {/* Contact Support CTA */}
-              <div className="mt-5 w-full text-center lg:mt-6">
+              <motion.div
+                className="mt-5 w-full text-center lg:mt-6"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, ease: "easeOut", delay: 0.36 }}
+              >
                 <p className="text-muted-foreground mb-4 text-sm text-center">
                   Still have questions? We&apos;re here to help.
                 </p>
@@ -171,7 +216,7 @@ const FaqSection = () => {
                     ) : null}
                   </DialogContent>
                 </Dialog>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>

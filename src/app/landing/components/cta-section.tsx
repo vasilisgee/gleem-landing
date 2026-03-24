@@ -1,5 +1,6 @@
 "use client"
 
+import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 
 const smoothScrollTo = (targetId: string) => {
@@ -25,36 +26,68 @@ export function CTASection() {
             <div className='space-y-8 relative z-10'>
               <div className='space-y-6'>
                 <h2 className='mb-6 text-5xl font-semibold leading-16 tracking-tight sm:text-6xl max-w-xl mx-auto leading-tight'>
-                  Spark your business online
-                  <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent italic font-normal pr-2">
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.45, ease: 'easeOut' }}
+                  >
+                    Spark your business online
+                  </motion.span>
+                  <motion.span
+                    className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent italic font-normal pr-2"
+                    initial={{ opacity: 0, filter: 'blur(10px)' }}
+                    whileInView={{ opacity: 1, filter: 'blur(0px)' }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, ease: 'easeOut', delay: 0.3 }}
+                  >
                    {" "}today
-                  </span>
+                  </motion.span>
                 </h2>
 
-                <p className='text-muted-foreground mx-auto max-w-2xl text-balance'>
-                 Help your customers find and trust you.
-                </p>
-              </div>
-
-              <div className='flex flex-row justify-center gap-4 sm:gap-6'>
-                <Button
-                  size='lg'
-                  className='button-shine-sweep text-base cursor-pointer'
-                  asChild
+                <motion.p
+                  className='text-muted-foreground mx-auto max-w-2xl text-balance'
+                  initial={{ opacity: 0, y: 14 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, ease: 'easeOut', delay: 0.15 }}
                 >
-                  <a
-                    href='#pricing'
-                    onClick={(e) => {
-                      e.preventDefault()
-                      smoothScrollTo('#pricing')
-                    }}
-                  >
-                    <span className="button-shine-sweep__label">Get your Website</span>
-                  </a>
-                </Button>
+                  Help your customers find and trust you.
+                </motion.p>
               </div>
 
-              <div className='text-foreground flex flex-wrap items-center justify-center gap-6 text-xs'>
+              <motion.div
+                initial={{ opacity: 0, filter: 'blur(10px)' }}
+                whileInView={{ opacity: 1, filter: 'blur(0px)' }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.55, ease: 'easeOut', delay: 0.28 }}
+              >
+                <div className='flex flex-row justify-center gap-4 sm:gap-6'>
+                  <Button
+                    size='lg'
+                    className='button-shine-sweep text-base cursor-pointer'
+                    asChild
+                  >
+                    <a
+                      href='#pricing'
+                      onClick={(e) => {
+                        e.preventDefault()
+                        smoothScrollTo('#pricing')
+                      }}
+                    >
+                      <span className="button-shine-sweep__label">Get your Website</span>
+                    </a>
+                  </Button>
+                </div>
+              </motion.div>
+
+              <motion.div
+                className='text-foreground flex flex-wrap items-center justify-center gap-6 text-xs'
+                initial={{ opacity: 0, filter: 'blur(10px)' }}
+                whileInView={{ opacity: 1, filter: 'blur(0px)' }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.55, ease: 'easeOut', delay: 0.34 }}
+              >
                 <div className='flex items-center gap-2'>
                     <span className='logo-dot-glow me-1 inline-flex items-center justify-center text-base leading-none -translate-y-px'>●</span>
 
@@ -70,7 +103,7 @@ export function CTASection() {
 
                   <span>Easy to update anytime</span>
                 </div>
-              </div>
+              </motion.div>
             </div>
             <div className="pointer-events-none absolute top-10 left-1/2 h-22 w-[80%] -translate-x-1/2 rounded-full bg-primary/5 blur-2xl lg:-top-8 lg:h-80" />
           </div>

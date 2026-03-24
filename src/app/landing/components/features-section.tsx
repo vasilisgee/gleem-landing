@@ -1,3 +1,6 @@
+"use client"
+
+import { motion } from 'framer-motion'
 import {
   ArrowRight,
   ClipboardList,
@@ -63,63 +66,93 @@ export function FeaturesSection() {
           <div className="space-y-6">
             <div className="space-y-4">
               <Badge className="mb-4 bg-background border-foreground/30 text-foreground"> What&apos;s Included</Badge>
-              <h2 className="text-5xl font-semibold tracking-tight sm:text-5xl mb-5">
-              One panel to go
-              </h2> 
-              <p className="text-muted-foreground text-base text-pretty">
-                Everything you need to manage your website, and nothing you don’t.
-              </p>
+              <motion.div
+                initial={{ opacity: 0, filter: 'blur(10px)' }}
+                whileInView={{ opacity: 1, filter: 'blur(0px)' }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.55, ease: 'easeOut' }}
+              >
+                <h2 className="text-5xl font-semibold tracking-tight sm:text-5xl mb-5">
+                One panel to go
+                </h2>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, ease: 'easeOut', delay: 0.12 }}
+              >
+                <p className="text-muted-foreground text-base text-pretty">
+                  Everything you need to manage your website, and nothing you don’t.
+                </p>
+              </motion.div>
             </div>
 
-            <ul className="grid gap-4 sm:grid-cols-2">
-              {mainFeatures.map((feature, index) => (
-                <li key={index} className="group hover:bg-accent/5 flex items-start gap-3 p-2 rounded-lg transition-colors">
-                  <div className="mt-0.5 flex shrink-0 items-center justify-center">
-                    <feature.icon className="size-5 text-primary" aria-hidden="true" />
-                  </div>
-                  <div>
-                    <h3 className="text-foreground font-medium">{feature.title}</h3>
-                    <p className="text-muted-foreground mt-1 text-sm">{feature.description}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
+            <motion.div
+              className="space-y-6"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.55, ease: 'easeOut', delay: 0.18 }}
+            >
+              <ul className="grid gap-4 sm:grid-cols-2">
+                {mainFeatures.map((feature, index) => (
+                  <li key={index} className="group hover:bg-accent/5 flex items-start gap-3 p-2 rounded-lg transition-colors">
+                    <div className="mt-0.5 flex shrink-0 items-center justify-center">
+                      <feature.icon className="size-5 text-primary" aria-hidden="true" />
+                    </div>
+                    <div>
+                      <h3 className="text-foreground font-medium">{feature.title}</h3>
+                      <p className="text-muted-foreground mt-1 text-sm">{feature.description}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
 
-            <div className="flex flex-col lg:flex-row gap-4 pt-5">
-              <Button size="lg" variant="secondary" className="cursor-pointer" asChild>
-                <a
-                  href="https://thegreekrestaurant.vercel.app/login"
-                  target="_blank"
-                  rel="noreferrer"
-                  className='flex items-center'
-                >
-                  Try Admin Panel
-                  <ArrowRight className="ms-2 size-4" aria-hidden="true" />
-                </a>
-              </Button>
-              <Button size="lg" variant="secondary" className="cursor-pointer" asChild>
-                <a
-                  href="https://thegreekrestaurant.vercel.app/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className='flex items-center'
-                >
-                   View Live Website
-                  <ArrowRight className="ms-2 size-4" aria-hidden="true" />
-                </a>
-              </Button>
-            </div>
+              <div className="flex flex-col lg:flex-row gap-4 pt-5">
+                <Button size="lg" variant="secondary" className="cursor-pointer" asChild>
+                  <a
+                    href="https://thegreekrestaurant.vercel.app/login"
+                    target="_blank"
+                    rel="noreferrer"
+                    className='flex items-center'
+                  >
+                    Try Admin Panel
+                    <ArrowRight className="ms-2 size-4" aria-hidden="true" />
+                  </a>
+                </Button>
+                <Button size="lg" variant="secondary" className="cursor-pointer" asChild>
+                  <a
+                    href="https://thegreekrestaurant.vercel.app/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className='flex items-center'
+                  >
+                     View Live Website
+                    <ArrowRight className="ms-2 size-4" aria-hidden="true" />
+                  </a>
+                </Button>
+              </div>
+            </motion.div>
           </div>
         </div>
 
-         <Image
-            src="/peeps/gleem-peep-sit-3.webp"
-            alt=""
-            aria-hidden
-            width={160}
-            height={160}
-            className="pointer-events-none absolute right-[40%] lg:right-12 -bottom-50 lg:-bottom-60 z-0 -scale-x-100 h-auto w-[100px] lg:w-[170px]"
-          />
+         <motion.div
+            className="pointer-events-none absolute right-[40%] lg:right-12 -bottom-50 lg:-bottom-60 z-0"
+            initial={{ opacity: 0, filter: 'blur(12px)' }}
+            whileInView={{ opacity: 1, filter: 'blur(0px)' }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.75, ease: 'easeOut', delay: 0.82 }}
+          >
+            <Image
+              src="/peeps/gleem-peep-sit-3.webp"
+              alt=""
+              aria-hidden
+              width={160}
+              height={160}
+              className="-scale-x-100 h-auto w-[100px] lg:w-[170px]"
+            />
+          </motion.div>
       </div>
     </section>
   )

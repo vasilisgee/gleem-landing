@@ -1,6 +1,7 @@
 "use client"
 
 import type { FormEvent } from "react"
+import { motion } from 'framer-motion'
 import { Check, LoaderCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -55,25 +56,47 @@ export function PricingSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="mx-auto max-w-md text-center mb-10 z-20 relative ">
           <Badge className="mb-4 bg-background border-foreground/30 text-foreground">Pricing Plan</Badge>
-          <h2 className="text-5xl font-semibold tracking-tight sm:text-5xl mb-6">
-            Simple and transparent pricing
-          </h2>
-          <p className="text-lg text-muted-foreground ">
-            Pay only for hosting and support.
-          </p>
+          <motion.div
+            initial={{ opacity: 0, filter: 'blur(10px)' }}
+            whileInView={{ opacity: 1, filter: 'blur(0px)' }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55, ease: 'easeOut' }}
+          >
+            <h2 className="text-5xl font-semibold tracking-tight sm:text-5xl mb-6">
+              Simple and transparent pricing
+            </h2>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: 'easeOut', delay: 0.12 }}
+          >
+            <p className="text-lg text-muted-foreground ">
+              Pay only for hosting and support.
+            </p>
+          </motion.div>
         </div>
 
         <div className="mx-auto max-w-3xl z-20 relative ">
-           <Image
-              src="/peeps/gleem-peep-stand-6.webp"
-              alt=""
-              aria-hidden
-              width={160}
-              height={160}
-              className="pointer-events-none absolute hidden lg:block lg:left-15 lg:-top-35 z-0 h-auto w-[60px] lg:w-[100px]"
-            />
+           <motion.div
+              className="pointer-events-none absolute hidden lg:block lg:left-15 lg:-top-35 z-0"
+              initial={{ opacity: 0, scale: 0.94 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.55, ease: 'easeOut', delay: 0.24 }}
+            >
+              <Image
+                src="/peeps/gleem-peep-stand-6.webp"
+                alt=""
+                aria-hidden
+                width={160}
+                height={160}
+                className="h-auto w-[60px] lg:w-[100px]"
+              />
+            </motion.div>
           <div className="border bg-card py-2 rounded-xl relative">
-            <div className="grid items-start lg:grid-cols-2 relative z-20">
+            <div className="grid items-start lg:grid-cols-2 relative z-20 overflow-hidden">
               <div className="order-2 flex flex-col gap-6 p-8 lg:order-1">
                 <div>
                   <div className="text-xl font-medium tracking-tight mb-2">What you get</div>

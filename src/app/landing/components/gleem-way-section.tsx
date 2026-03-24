@@ -1,3 +1,6 @@
+"use client"
+
+import { motion } from "framer-motion"
 import type { CSSProperties } from "react"
 import { Check, X, ThumbsUp, ThumbsDown } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
@@ -31,15 +34,46 @@ export function GleemWaySection() {
               Why Gleem
             </Badge>
             <h2 className="mb-6 text-5xl font-semibold leading-13 tracking-tight sm:text-5xl">
-              Website builders take time.
+              <motion.span
+                className="inline-block"
+                initial={{ opacity: 0, filter: "blur(10px)" }}
+                whileInView={{ opacity: 1, filter: "blur(0px)" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.55, ease: "easeOut" }}
+              >
+                Website builders take time.
+              </motion.span>
               <br />
-              Agencies cost a fortune.
+              <motion.span
+                className="inline-block"
+                initial={{ opacity: 0, filter: "blur(10px)" }}
+                whileInView={{ opacity: 1, filter: "blur(0px)" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.55, ease: "easeOut", delay: 0.12 }}
+              >
+                Agencies cost a fortune.
+              </motion.span>
               <br />
-              We bridge the gap.
+              <motion.span
+                className="inline-block"
+                initial={{ opacity: 0, filter: "blur(10px)" }}
+                whileInView={{ opacity: 1, filter: "blur(0px)" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.55, ease: "easeOut", delay: 0.24 }}
+              >
+                We bridge the gap.
+              </motion.span>
             </h2>
-            <p className="mx-auto max-w-xl text-lg text-muted-foreground">
-              We are professional human designers using modern AI tools to deliver polished websites at a lower cost.
-            </p>
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.55, ease: "easeOut", delay: 0.18 }}
+            >
+              <p className="mx-auto max-w-xl text-lg text-muted-foreground">
+                We are professional human designers using modern AI tools to deliver polished websites at a lower cost.
+              </p>
+            </motion.div>
           </div>
 
           <div className="relative z-10 mx-auto max-w-4xl overflow-hidden lg:overflow-visible">
@@ -60,44 +94,52 @@ export function GleemWaySection() {
                 </CardContent>
               </Card>
 
-              <Card className="relative z-10 order-1 overflow-hidden border-0 py-0 shadow-xl ring-1 ring-transparent lg:order-2">
-                <div
-                  className="mega-menu-shine-ring mega-menu-shine-animate pointer-events-none absolute inset-0 z-0 size-full rounded-[inherit] will-change-[background-position]"
-                  style={
-                    {
-                      "--border-width": "1.5px",
-                      "--duration": "11s",
-                      backgroundImage:
-                        "radial-gradient(circle at center, transparent 36%, transparent 43%, var(--mega-menu-shine) 50%, transparent 57%, transparent 64%)",
-                      backgroundSize: "220% 220%",
-                      backgroundRepeat: "no-repeat",
-                      animationDelay: "-3.5s",
-                      mask:
-                        "linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0px) content-box exclude, linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0px)",
-                      WebkitMask:
-                        "linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0px) content-box, linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0px)",
-                      WebkitMaskComposite: "xor",
-                      padding: "var(--border-width)",
-                    } as CSSProperties
-                  }
-                />
-                <CardContent className="relative z-10 p-8 sm:p-10">
-                  <Badge className="absolute top-5 right-5 text-xs">
-                    Top Choice
-                  </Badge>
-                  <h3 className="mb-4 text-xl font-medium tracking-tight flex item-center pt-3">
-                      <ThumbsUp className="h-5 w-5 inline mr-2 mt-0.5" /> The Gleem Way
-                  </h3>
-                  <ul className="space-y-4">
-                    {gleemBenefits.map((item) => (
-                      <li key={item} className="flex items-start gap-3 mb-3 text-sm">
-                        <Check className="mt-1 h-4 w-4 shrink-0 text-primary bg-muted/80 p-0.5 rounded-full" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+              <motion.div
+                className="relative z-10 order-1 lg:order-2"
+                initial={{ opacity: 0, y: 18, scale: 0.97 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.16 }}
+              >
+                <Card className="relative z-10 order-1 overflow-hidden border-0 py-0 shadow-xl ring-1 ring-transparent lg:order-2">
+                  <div
+                    className="mega-menu-shine-ring mega-menu-shine-animate pointer-events-none absolute inset-0 z-0 size-full rounded-[inherit] will-change-[background-position]"
+                    style={
+                      {
+                        "--border-width": "1.5px",
+                        "--duration": "11s",
+                        backgroundImage:
+                          "radial-gradient(circle at center, transparent 36%, transparent 43%, var(--mega-menu-shine) 50%, transparent 57%, transparent 64%)",
+                        backgroundSize: "220% 220%",
+                        backgroundRepeat: "no-repeat",
+                        animationDelay: "-3.5s",
+                        mask:
+                          "linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0px) content-box exclude, linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0px)",
+                        WebkitMask:
+                          "linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0px) content-box, linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0px)",
+                        WebkitMaskComposite: "xor",
+                        padding: "var(--border-width)",
+                      } as CSSProperties
+                    }
+                  />
+                  <CardContent className="relative z-10 p-8 sm:p-10">
+                    <Badge className="absolute top-5 right-5 text-xs">
+                      Top Choice
+                    </Badge>
+                    <h3 className="mb-4 text-xl font-medium tracking-tight flex item-center pt-3">
+                        <ThumbsUp className="h-5 w-5 inline mr-2 mt-0.5" /> The Gleem Way
+                    </h3>
+                    <ul className="space-y-4">
+                      {gleemBenefits.map((item) => (
+                        <li key={item} className="flex items-start gap-3 mb-3 text-sm">
+                          <Check className="mt-1 h-4 w-4 shrink-0 text-primary bg-muted/80 p-0.5 rounded-full" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </motion.div>
               <div className="pointer-events-none absolute hidden lg:block bottom-3 left-1/2 z-0 h-56 w-56 -translate-x-1/2 rounded-full bg-primary/20 blur-3xl sm:bottom-4 sm:h-72 sm:w-72 md:h-80 md:w-80 lg:-bottom-5 lg:left-auto lg:-right-42 lg:h-95 lg:w-[44%]" />
             </div>
           </div>

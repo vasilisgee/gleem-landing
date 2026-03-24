@@ -1,3 +1,6 @@
+"use client"
+
+import { motion } from "framer-motion"
 import type { CSSProperties } from "react"
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
@@ -54,42 +57,69 @@ export function HowItWorksSection() {
           <Badge className="mb-4 bg-background border-foreground/30 text-foreground">
             How it Works
           </Badge>
-          <h2 className="mb-6 text-5xl font-semibold tracking-tight sm:text-5xl">
-            Get your website in 3 easy steps
-          </h2>
-          <div className="mb-6 flex items-center justify-center gap-2">
+          <motion.div
+            initial={{ opacity: 0, filter: "blur(10px)" }}
+            whileInView={{ opacity: 1, filter: "blur(0px)" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55, ease: "easeOut" }}
+          >
+            <h2 className="mb-6 text-5xl font-semibold tracking-tight sm:text-5xl">
+              Get your website in 3 easy steps
+            </h2>
+          </motion.div>
+          <motion.div
+            className="mb-6 flex items-center justify-center gap-2"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.22 }}
+          >
             <span className="text-muted-foreground">We build to support local businesses.</span>
-          </div>
+          </motion.div>
         </div>
 
         <div className="mx-auto max-w-6xl">
-          <div className="mb-12 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mb-12 grid grid-cols-1 gap-x-8 gap-y-5 lg:gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {values.map((value, index) => (
-              <Card key={index} className="group py-2 shadow-[0_12px_28px_-24px_color-mix(in_oklab,var(--primary)_70%,transparent)]">
-                <CardContent className="p-8">
-                  <div className="flex flex-col items-center text-center">
-                     <Badge className="mb-4 text-xs ">
-                      Step {value.iconStep}
-                    </Badge>
-                    <div className="relative mb-6 flex h-36 w-36 items-end justify-center overflow-hidden rounded-full bg-muted/60 px-3 pt-3 pb-0">
-                      <ThemedSvgIcon
-                        src={value.iconSrc}
-                        className={`absolute right-3 top-9 z-20 text-primary transition-transform duration-300 ease-linear ${value.iconClassName}`}
-                      />
-                      <Image
-                        src={value.peepSrc}
-                        alt=""
-                        width={160}
-                        height={160}
-                        className="h-[160px] w-auto object-contain translate-y-10 transition duration-400 ease group-hover:-translate-x-5 -translate-x-7"
-                      />
-                    </div>
-                    
-                    <h3 className="text-xl font-medium">{value.title}</h3>
-                    <p className="mt-3 text-sm leading-4.5 text-muted-foreground">{value.description}</p>
-                  </div>
-                </CardContent>
-              </Card>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.55, ease: "easeOut", delay: 0.22 * index }}
+              >
+                <Card className="group py-2 transition ease hover:shadow-[0_12px_28px_-24px_color-mix(in_oklab,var(--primary)_70%,transparent)]">
+                  <CardContent className="p-8">
+                    <motion.div
+                      className="flex flex-col items-center text-center"
+                      initial={{ opacity: 0, filter: "blur(10px)" }}
+                      whileInView={{ opacity: 1, filter: "blur(0px)" }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.55, ease: "easeOut", delay: 0.22 * index }}
+                    >
+                       <Badge className="mb-4 text-xs ">
+                        Step {value.iconStep}
+                      </Badge>
+                      <div className="relative mb-6 flex h-36 w-36 items-end justify-center overflow-hidden rounded-full bg-muted/60 px-3 pt-3 pb-0">
+                        <ThemedSvgIcon
+                          src={value.iconSrc}
+                          className={`absolute right-3 top-9 z-20 text-primary transition-transform duration-300 ease-linear ${value.iconClassName}`}
+                        />
+                        <Image
+                          src={value.peepSrc}
+                          alt=""
+                          width={160}
+                          height={160}
+                          className="h-[160px] w-auto object-contain translate-y-10 transition duration-400 ease group-hover:-translate-x-5 -translate-x-7"
+                        />
+                      </div>
+                      
+                      <h3 className="text-xl font-medium">{value.title}</h3>
+                      <p className="mt-3 text-sm leading-4.5 text-muted-foreground">{value.description}</p>
+                    </motion.div>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
