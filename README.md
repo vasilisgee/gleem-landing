@@ -22,8 +22,6 @@ Gleem bridges that gap: a human designer (AI-assisted) builds the site quickly, 
 
 The live demo linked above, [theGreek](https://github.com/vasilisgee/thegreek), is the actual product Gleem sells, fully deployed with a working CMS admin panel.
 
----
-
 ## Project Highlights
 
 - Full SaaS marketing landing page with conversion-focused layout and clear CTA hierarchy
@@ -34,13 +32,9 @@ The live demo linked above, [theGreek](https://github.com/vasilisgee/thegreek), 
 - Contact form with simulated submission
 - Live links to a real deployed product as the in-page demo
 
----
-
 ## Screenshots
 
 > Coming soon.
-
----
 
 ## Tech Stack
 
@@ -51,8 +45,6 @@ The live demo linked above, [theGreek](https://github.com/vasilisgee/thegreek), 
 - shadcn/ui
 - Framer Motion
 - Vercel
-
----
 
 ## Page Sections
 
@@ -68,8 +60,6 @@ The live demo linked above, [theGreek](https://github.com/vasilisgee/thegreek), 
 | **FAQ** | Accordion with common questions |
 | **Contact** | Contact form + email + FAQ shortcut |
 | **Footer CTA** | Final conversion section |
-
----
 
 ## Design Decisions
 
@@ -92,8 +82,6 @@ npm run dev
 
 Open `http://localhost:3000`
 
-No environment variables required.
-
 ---
 
 ## Part of the Gleem Ecosystem
@@ -104,8 +92,6 @@ This landing page is one half of a two-project portfolio exercise:
 - **[theGreek](https://github.com/vasilisgee/thegreek)**, the actual product Gleem delivers, with full CMS admin panel
 
 Both projects are documented at **[vasilisportfolio.com](https://vasilisportfolio.com)**.
-
----
 
 ## License
 
