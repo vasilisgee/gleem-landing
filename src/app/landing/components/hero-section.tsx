@@ -32,7 +32,7 @@ export function HeroSection() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.45, ease: 'easeOut' }}
+              transition={{ duration: 0.45, ease: 'easeOut' , delay: 0.3  }}
             >
               Your business needs a website. We make it
             </motion.span>{' '}
@@ -41,7 +41,7 @@ export function HeroSection() {
               initial={{ opacity: 0, filter: 'blur(10px)' }}
               whileInView={{ opacity: 1, filter: 'blur(0px)' }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, ease: 'easeOut', delay: 0.3 }}
+              transition={{ duration: 0.5, ease: 'easeOut', delay: 0.6 }}
             >
               {" "}simple
             </motion.span>
@@ -62,7 +62,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 16, filter: 'blur(8px)' }}
             whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: 'easeOut', delay: 1.4 }}
+            transition={{ duration: 0.6, ease: 'easeOut', delay: 2.8 }}
           >
             <div className="flex w-full flex-wrap items-center justify-center gap-4">
               <Button
@@ -105,7 +105,7 @@ export function HeroSection() {
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 1.65, ease: [0.22, 1, 0.36, 1], delay: 0.8 }}
+                    transition={{ duration: 1.65, ease: [0.22, 1, 0.36, 1], delay: 1.5 }}
                   >
                     <Image
                       src={standPeep2}
@@ -120,7 +120,7 @@ export function HeroSection() {
                     initial={{ opacity: 0, x: -66 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 2.85, ease: [0.22, 1, 0.36, 1], delay: 1.5 }}
+                    transition={{ duration: 2.85, ease: [0.22, 1, 0.36, 1], delay: 2.1 }}
                   >
                     <Image
                       src={standPeep4}
@@ -135,7 +135,7 @@ export function HeroSection() {
                     initial={{ opacity: 0, scale: 0.96 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 2.9, ease: [0.22, 1, 0.36, 1], delay: 1.1 }}
+                    transition={{ duration: 2.9, ease: [0.22, 1, 0.36, 1], delay: 2.2 }}
                   >
                     <Image
                       src={standPeep}
