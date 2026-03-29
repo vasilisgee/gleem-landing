@@ -46,30 +46,15 @@ The live demo linked above, [theGreek](https://github.com/vasilisgee/thegreek), 
 - Framer Motion
 - Vercel
 
-## Page Sections
-
-| Section | Description |
-|---------|-------------|
-| **Hero** | Headline, primary CTA, animated trust ticker |
-| **How it Works** | 3-step process: form, design, launch |
-| **Why Gleem** | Comparison table vs website builders |
-| **What We Offer** | Feature grid: design, SEO, maps, catalogue, speed |
-| **Pricing** | Single plan, monthly/annual toggle |
-| **One Panel to Go** | Admin panel screenshots linked to live theGreek demo |
-| **Team** | 3 team members |
-| **FAQ** | Accordion with common questions |
-| **Contact** | Contact form + email + FAQ shortcut |
-| **Footer CTA** | Final conversion section |
-
 ## Design Decisions
 
 **No accent color:** the entire UI runs on black, white, and grey. CTA hierarchy is handled through fill, border weight, and a shine/glow hover effect on primary buttons. The monochrome palette was a deliberate choice to complement the line-art illustration set and create a bold, memorable identity without relying on color as a crutch.
 
 **Illustration system:** three recurring characters from the same FreePeeps illustration set are used consistently across sections, giving the page a cohesive visual personality.
 
-**Single pricing plan:** intentional. The target audience (local business owners) benefits from zero decision fatigue. One plan, one price, everything included.
+**Single pricing plan:** The target audience (local business owners) benefits from zero decision fatigue. One plan, one price, everything included.
 
-**Frontend-only architecture:** no backend is required. The project demonstrates what a polished, production-grade marketing site can achieve purely on the frontend, with Framer Motion handling the interaction layer and shadcn/ui providing the component foundation.
+**Frontend-only architecture:** The project demonstrates what a polished, production-grade marketing site can achieve purely on the frontend, with Framer Motion handling the interaction layer and shadcn/ui providing the component foundation.
 
 ---
 
