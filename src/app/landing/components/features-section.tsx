@@ -115,7 +115,7 @@ export function FeaturesSection() {
                     href="https://thegreekrestaurant.vercel.app/login"
                     target="_blank"
                     rel="noreferrer"
-                    className='flex items-center'
+                    className='flex items-center self-center lg:self-auto'
                   >
                     Try Admin Panel
                     <ArrowRight className="ms-2 size-4" aria-hidden="true" />
@@ -126,7 +126,7 @@ export function FeaturesSection() {
                     href="https://thegreekrestaurant.vercel.app/"
                     target="_blank"
                     rel="noreferrer"
-                    className='flex items-center'
+                    className='flex items-center self-center lg:self-auto'
                   >
                      View Live Website
                     <ArrowRight className="ms-2 size-4" aria-hidden="true" />

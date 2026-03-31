@@ -18,7 +18,7 @@ Marketing landing page for **Gleem**, an original portfolio concept exploring a 
 
 Small local businesses (restaurants, barbers, electricians, plumbers) still rely on bloated WordPress installs and overpriced hosting when all they need is a fast, professional one-page site.
 
-Gleem bridges that gap: a human designer (AI-assisted) builds the site quickly, and the business owner manages their content through a simple panel. Hosted on Vercel, the infrastructure cost is near zero, passed on as an affordable flat monthly fee.
+Gleem bridges that gap: a human designer (AI-assisted) builds the site quickly, and the business owner manages their content through a simple panel. Hosted on services like Vercel, the infrastructure cost is near zero, passed on as an affordable flat monthly fee.
 
 The live demo linked above, [theGreek](https://github.com/vasilisgee/thegreek), is the actual product Gleem sells, fully deployed with a working CMS admin panel.
 
@@ -31,6 +31,7 @@ The live demo linked above, [theGreek](https://github.com/vasilisgee/thegreek), 
 - Modal lead capture flow with form validation and toast notification feedback
 - Contact form with simulated submission
 - Live links to a real deployed product as the in-page demo
+- Consent-aware Google Analytics setup with a reusable cookie banner and persistent user choice
 
 ## Screenshots
 
@@ -63,6 +64,12 @@ The live demo linked above, [theGreek](https://github.com/vasilisgee/thegreek), 
 ```bash
 npm install
 npm run dev
+```
+
+If you want Google Analytics enabled locally, create a `.env.local` file based on `.env.example` and set:
+
+```bash
+NEXT_PUBLIC_GOOGLE_MEASUREMENT_ID=G-XXXXXXXXXX
 ```
 
 Open `http://localhost:3000`
