@@ -31,7 +31,7 @@ The live demo linked above, [theGreek](https://github.com/vasilisgee/thegreek), 
 - Modal lead capture flow with form validation and toast notification feedback
 - Contact form with simulated submission
 - Live links to a real deployed product as the in-page demo
-- Consent-aware Google Analytics setup with a reusable cookie banner and persistent user choice
+- Consent-aware Google Analytics setup using [shadcn-cookie-consent](https://github.com/r2hu1/shadcn-cookie-consent)
 - SEO metadata, Open Graph tags, Lighthouse-optimized performance and accessibility, and Next.js image optimization
 
 ## Screenshots
@@ -63,7 +63,7 @@ The live demo linked above, [theGreek](https://github.com/vasilisgee/thegreek), 
 
 **No accent color:** the entire UI runs on black, white, and grey. CTA hierarchy is handled through fill, border weight, and a shine/glow hover effect on primary buttons. The monochrome palette was a deliberate choice to complement the line-art illustration set and create a bold, memorable identity without relying on color as a crutch.
 
-**Illustration system:** three recurring characters from the same FreePeeps illustration set are used consistently across sections, giving the page a cohesive visual personality.
+**Illustration system:** three recurring characters from the same [OpenPeeps](https://www.openpeeps.com/) illustration set are used consistently across sections, giving the page a cohesive visual personality.
 
 **Single pricing plan:** The target audience (local business owners) benefits from zero decision fatigue. One plan, one price, everything included.
 
