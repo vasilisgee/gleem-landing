@@ -32,6 +32,7 @@ The live demo linked above, [theGreek](https://github.com/vasilisgee/thegreek), 
 - Contact form with simulated submission
 - Live links to a real deployed product as the in-page demo
 - Consent-aware Google Analytics setup with a reusable cookie banner and persistent user choice
+- SEO metadata, Open Graph tags, Lighthouse-optimized performance and accessibility, and Next.js image optimization
 
 ## Screenshots
 
