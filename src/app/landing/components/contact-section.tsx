@@ -51,17 +51,17 @@ export function ContactSection({ onSubmitted }: ContactSectionProps) {
   return (
     <div>
       <div className="mx-auto max-w-2xl text-center mb-10">
-        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+        <h2 className="text-4xl font-bold tracking-tight sm:text-4xl mb-4 mt-4">
           Need help or have questions?
         </h2>
-        <p className="text-lg text-muted-foreground">
+        <p className="lg:text-lg text-muted-foreground">
           Our team is here to help you get the most out of Gleem.
         </p>
       </div>
 
       <div className="grid gap-8 lg:grid-cols-3">
         <div className="space-y-6 order-2 lg:order-1">
-          <Card className="hover:shadow-xl gap-2 transition-shadow">
+          <Card className="hover:shadow-xl gap-1 transition-shadow">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <CircleHelp className="h-5 w-5 text-primary" />
@@ -69,13 +69,13 @@ export function ContactSection({ onSubmitted }: ContactSectionProps) {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground mb-3 text-sm">
+              <p className="text-muted-foreground text-sm">
                 Most questions are answered there like pricing, process and timelines.
               </p>
             </CardContent>
           </Card>
 
-          <Card className="hover:shadow-xl gap-2 transition-shadow">
+          <Card className="hover:shadow-xl gap-1 transition-shadow">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <MessageCircle className="h-5 w-5 text-primary " />
@@ -83,13 +83,13 @@ export function ContactSection({ onSubmitted }: ContactSectionProps) {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground mb-3 text-sm">
+              <p className="text-muted-foreground text-sm">
                 Send us a message and expect a reply within a few hours during business days.
               </p>
             </CardContent>
           </Card>
 
-          <Card className="hover:shadow-xl gap-2 transition-shadow ">
+          <Card className="hover:shadow-xl gap-1 transition-shadow ">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Mail className="h-5 w-5 text-primary" />
@@ -97,7 +97,7 @@ export function ContactSection({ onSubmitted }: ContactSectionProps) {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground mb-3 text-sm">
+              <p className="text-muted-foreground text-sm">
                 Skip the form and drop us a line at <a href="#" className="font-semibold underline">hello@gleem.dev</a>
               </p>
             </CardContent>
