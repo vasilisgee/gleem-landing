@@ -1,8 +1,21 @@
 export const COOKIE_CONSENT_COOKIE_NAME = "gleem_cookie_consent"
 export const COOKIE_CONSENT_OPEN_EVENT = "gleem:open-cookie-consent"
+export const COOKIE_CONSENT_UPDATED_EVENT = "gleem:cookie-consent-updated"
 export const DEFAULT_COOKIE_CONSENT_MAX_AGE_DAYS = 180
 
 export type CookieConsentValue = "accepted" | "declined"
+
+export function dispatchCookieConsentUpdated(value: CookieConsentValue) {
+  if (typeof window === "undefined") {
+    return
+  }
+
+  window.dispatchEvent(
+    new CustomEvent<CookieConsentValue>(COOKIE_CONSENT_UPDATED_EVENT, {
+      detail: value,
+    })
+  )
+}
 
 export function readCookieConsent(
   cookieName = COOKIE_CONSENT_COOKIE_NAME

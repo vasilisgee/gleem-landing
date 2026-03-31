@@ -5,6 +5,7 @@ import { Cookie } from "lucide-react"
 
 import {
   DEFAULT_COOKIE_CONSENT_MAX_AGE_DAYS,
+  dispatchCookieConsentUpdated,
   type CookieConsentValue,
   COOKIE_CONSENT_COOKIE_NAME,
   COOKIE_CONSENT_OPEN_EVENT,
@@ -103,6 +104,7 @@ export const CookieConsent = React.forwardRef<HTMLDivElement, CookieConsentProps
 
         clearScheduledState()
         setIsOpen(false)
+        dispatchCookieConsentUpdated(value)
 
         hideTimeoutRef.current = window.setTimeout(() => {
           setIsHidden(true)

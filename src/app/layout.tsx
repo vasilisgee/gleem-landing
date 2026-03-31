@@ -3,6 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 
 import { CookieConsent } from "@/components/cookie-consent";
+import { GoogleAnalytics } from "@/components/google-analytics";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { dmSans, playfairDisplay } from "@/lib/fonts";
@@ -17,9 +18,6 @@ export const metadata: Metadata = {
       url: "https://getgleem.vercel.app",
       siteName: "Gleem",
       type: "website",
-    },
-    verification: {
-      google: "-qnpyOMCi8KWGvPw-lYlVMXNzfrBMmEN4XrnBjv7j1Y",
     }
 };
 
@@ -28,6 +26,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const googleMeasurementId = process.env.NEXT_PUBLIC_GOOGLE_MEASUREMENT_ID;
   const themeInitScript = `
     (() => {
       try {
@@ -63,6 +62,7 @@ export default function RootLayout({
           <CookieConsent variant="default" />
           <Toaster position="bottom-center" />
         </ThemeProvider>
+        <GoogleAnalytics measurementId={googleMeasurementId} />
       </body>
     </html>
   );
