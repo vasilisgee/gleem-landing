@@ -19,7 +19,7 @@ export function LandingFooter() {
 
             <div className="flex flex-row items-center justify-center gap-1.5">
             <span className="inline-flex justify-center items-center">
-              <a href="https://github.com/vasilisgee" target='_blank' className="font-semibold text-foreground hover:text-primary transition-colors cursor-pointer inline-flex "><PiGithubLogoBold className="inline size-4 mr-1"/> Github </a>
+              <a href="https://github.com/vasilisgee/gleem-landing" target='_blank' className="font-semibold text-foreground hover:text-primary transition-colors cursor-pointer inline-flex "><PiGithubLogoBold className="inline size-4 mr-1"/> Github </a>
             </span>
             <span className="hidden sm:inline">•</span>
             <span className="inline-flex justify-center items-center">
