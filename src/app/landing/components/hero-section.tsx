@@ -24,7 +24,7 @@ const smoothScrollTo = (targetId: string) => {
 
 export function HeroSection() {
   return (
-    <section id="hero" className="relative overflow-hidden bg-gradient-to-b from-background to-background/80 pt-16 sm:pt-20 pb-10 sm:pb-15">
+    <section id="hero" className="relative overflow-hidden bg-linear-to-b from-background to-background/80 pt-16 sm:pt-20 pb-10 sm:pb-15">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="mb-6 mt-5 text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
@@ -37,7 +37,7 @@ export function HeroSection() {
               Your business needs a website. We make it
             </motion.span>{' '}
             <motion.span
-              className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent italic font-normal pr-2"
+              className="bg-linear-to-r from-primary to-primary/60 bg-clip-text text-transparent italic font-normal pr-2"
               initial={{ opacity: 0, filter: 'blur(10px)' }}
               whileInView={{ opacity: 1, filter: 'blur(0px)' }}
               viewport={{ once: true }}
@@ -147,7 +147,7 @@ export function HeroSection() {
                   </motion.div>
                 </div>
               </div>
-              <div className="absolute bottom-0 left-0 z-20 h-24 w-full rounded-b-xl bg-gradient-to-b from-background/0 via-background/70 to-background sm:h-28 lg:h-35"></div>
+              <div className="absolute bottom-0 left-0 z-20 h-24 w-full rounded-b-xl bg-linear-to-b from-background/0 via-background/70 to-background sm:h-28 lg:h-35"></div>
             </div>
           </div>
         </div>

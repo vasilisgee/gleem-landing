@@ -168,7 +168,7 @@ export const CookieConsent = React.forwardRef<HTMLDivElement, CookieConsentProps
           aria-live="polite"
           {...props}
         >
-          <Card className="gap-4 border-border/70 bg-background/95 py-3 shadow-2xl backdrop-blur supports-[backdrop-filter]:bg-background/85">
+          <Card className="gap-4 border-border/70 bg-background/95 py-3 shadow-2xl backdrop-blur supports-backdrop-filter:bg-background/85">
             <CardContent className="grid gap-3 px-4 sm:grid-cols-[1fr_auto] sm:items-center">
               <CardDescription className="text-xs sm:text-sm">
                 {description}
@@ -209,7 +209,7 @@ export const CookieConsent = React.forwardRef<HTMLDivElement, CookieConsentProps
           aria-live="polite"
           {...props}
         >
-          <Card className="gap-4 border-border/70 bg-background/95 py-4 shadow-2xl backdrop-blur supports-[backdrop-filter]:bg-background/85">
+          <Card className="gap-4 border-border/70 bg-background/95 py-4 shadow-2xl backdrop-blur supports-backdrop-filter:bg-background/85">
             <CardHeader className="flex flex-row items-center gap-2 space-y-0 px-4 pb-0">
               <Cookie className="size-4 text-muted-foreground" />
               <CardTitle className="text-base">{title}</CardTitle>
@@ -251,7 +251,7 @@ export const CookieConsent = React.forwardRef<HTMLDivElement, CookieConsentProps
         aria-live="polite"
         {...props}
       >
-        <Card className="gap-4 border-border/70 bg-background/95 shadow-2xl backdrop-blur supports-[backdrop-filter]:bg-background/85 max-w-sm">
+        <Card className="max-w-sm gap-4 border-border/70 bg-background/95 shadow-2xl backdrop-blur supports-backdrop-filter:bg-background/85">
           <CardHeader className="flex flex-row items-center gap-2 space-y-0 pb-0">
             <Cookie className="size-5 text-muted-foreground" />
             <CardTitle className="text-base">{title}</CardTitle>

@@ -136,7 +136,7 @@ export function PricingSection() {
                 </div>
               </div>
 
-              <div className="order-1 my-2 mx-4 flex flex-col gap-4 rounded-xl border-transparent bg-card bg-gradient-to-r from-primary/8 to-secondary/8 p-8 py-10 shadow-xl ring-1 ring-foreground/10 lg:order-2 lg:self-center">
+              <div className="order-1 my-2 mx-4 flex flex-col gap-4 rounded-xl border-transparent bg-card bg-linear-to-r from-primary/8 to-secondary/8 p-8 py-10 shadow-xl ring-1 ring-foreground/10 lg:order-2 lg:self-center">
 
                 <div className="align-center text-center">
 

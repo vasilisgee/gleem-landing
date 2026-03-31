@@ -63,7 +63,7 @@ export function TeamSection() {
         <div className="mx-auto max-w-5xl">
           <div className="grid grid-cols-1 gap-x-8 gap-y-5 lg:gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {featuredTeam.map((member, index) => {
-              const contentDelay = index === 0 ? 0.56 : index === 1 ? 0.84 : 0.98
+              const contentDelay = index === 0 ? 0.46 : index === 1 ? 0.74 : 0.88
 
               return (
                 <motion.div

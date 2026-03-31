@@ -124,7 +124,7 @@ const FaqSection = () => {
                       <AccordionItem
                         key={item.value}
                         value={item.value}
-                        className="faq-accordion-item rounded-md !border bg-background shadow-xs transition-[background-color,border-color,box-shadow] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-accent/90 data-[state=open]:bg-accent/90"
+                        className="faq-accordion-item rounded-md border! bg-background shadow-xs transition-[background-color,border-color,box-shadow] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-accent/90 data-[state=open]:bg-accent/90"
                       >
                         <AccordionTrigger className="cursor-pointer items-center gap-4 rounded-none bg-transparent py-2 ps-3 pe-4 hover:no-underline data-[state=open]:border-b">
                           <div className="flex items-center gap-4">

@@ -105,8 +105,8 @@ export function LogoCarousel() {
             </Badge>
           </div>
           <div className="relative">
-            <div className="pointer-events-none absolute top-0 bottom-0 left-0 z-10 w-20 bg-gradient-to-r from-background to-transparent" />
-            <div className="pointer-events-none absolute top-0 right-0 bottom-0 z-10 w-20 bg-gradient-to-l from-background to-transparent" />
+            <div className="pointer-events-none absolute top-0 bottom-0 left-0 z-10 w-20 bg-linear-to-r from-background to-transparent" />
+            <div className="pointer-events-none absolute top-0 right-0 bottom-0 z-10 w-20 bg-linear-to-l from-background to-transparent" />
 
             <div className="overflow-hidden">
               <div className="flex w-max items-center gap-8 sm:gap-12 animate-logo-scroll cursor-default">

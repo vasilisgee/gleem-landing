@@ -9,7 +9,7 @@ export function LandingFooter() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
         {/* Bottom Footer */}
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-2 justify-center">
+        <div className="flex flex-col items-center justify-center gap-2 lg:flex-row">
           <div className="flex flex-col sm:flex-row items-center gap-2 text-muted-foreground text-xs">
              <span>© {new Date().getFullYear()} Gleem Project</span>
               <span className="hidden sm:inline mx-1">•</span>

@@ -35,7 +35,7 @@ export function CTASection() {
                     Spark your business online
                   </motion.span>
                   <motion.span
-                    className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent italic font-normal pr-2"
+                    className="bg-linear-to-r from-primary to-primary/60 bg-clip-text text-transparent italic font-normal pr-2"
                     initial={{ opacity: 0, filter: 'blur(10px)' }}
                     whileInView={{ opacity: 1, filter: 'blur(0px)' }}
                     viewport={{ once: true }}
