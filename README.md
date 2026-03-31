@@ -95,8 +95,6 @@ This landing page is one half of a two-project portfolio exercise:
 - **Gleem** (this repo), the company marketing site
 - **[theGreek](https://github.com/vasilisgee/thegreek)**, the actual product Gleem delivers, with full CMS admin panel
 
-Both projects are documented at **[vasilisportfolio.com](https://vasilisportfolio.com)**.
-
 ## License
 
 This project is personal and educational work. Free to explore and reference. Commercial use or redistribution is not permitted without permission.
