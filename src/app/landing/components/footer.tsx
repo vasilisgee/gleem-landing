@@ -1,3 +1,4 @@
+import { CookieSettingsButton } from "@/components/cookie-settings-button"
 import {
   PiGithubLogoBold  
 } from "react-icons/pi"
@@ -18,6 +19,8 @@ export function LandingFooter() {
             <span>Illustrations by <a href="https://www.openpeeps.com/" rel="nofollow" target='_blank' className="font-semibold text-foreground hover:text-primary transition-colors cursor-pointer">OpenPeeps</a></span>
             <span className="hidden sm:inline">•</span>
             <span>View project on <a href="https://github.com/vasilisgee" target='_blank' className="font-semibold text-foreground hover:text-primary transition-colors cursor-pointer inline-flex ">Github <PiGithubLogoBold className="inline size-4 ml-1"/></a></span>
+            <span className="hidden sm:inline">•</span>
+            <CookieSettingsButton className="font-semibold text-foreground hover:text-primary transition-colors cursor-pointer" />
           </div>
         </div>
       </div>

@@ -466,6 +466,16 @@ html {
   opacity: 0;
 }
 
+.button-shine-no-swipe[data-slot="button"]::after {
+  display:none !important
+}
+
+.button-shine-no-swipe[data-slot="button"]:hover::after,
+.button-shine-no-swipe[data-slot="button"]:focus-visible::after {
+  content: none !important;
+  opacity: 0 !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .button-shine-sweep[data-slot="button"]::after {
     animation: none;
