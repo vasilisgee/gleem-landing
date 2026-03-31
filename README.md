@@ -36,16 +36,16 @@ The live demo linked above, [theGreek](https://github.com/vasilisgee/thegreek), 
 ## Screenshots
 
 <p>
-  <img src="public/screenshots/gleem-landing-1.png" width="210" />
-  <img src="public/screenshots/gleem-landing-2.png" width="210" />
-  <img src="public/screenshots/gleem-landing-3.png" width="210" />
-  <img src="public/screenshots/gleem-landing-4.png" width="210" />
-  <img src="public/screenshots/gleem-landing-5.png" width="210" />
-  <img src="public/screenshots/gleem-landing-6.png" width="210" />
-  <img src="public/screenshots/gleem-landing-7.png" width="100" />
-  <img src="public/screenshots/gleem-landing-8.png" width="100" />
-  <img src="public/screenshots/gleem-landing-9.png" width="100" />
-  <img src="public/screenshots/gleem-landing-10.png" width="100" />
+  <img src="public/screenshots/gleem-landing-1.png" width="200" />
+  <img src="public/screenshots/gleem-landing-2.png" width="200" />
+  <img src="public/screenshots/gleem-landing-3.png" width="200" />
+  <img src="public/screenshots/gleem-landing-4.png" width="200" />
+  <img src="public/screenshots/gleem-landing-5.png" width="200" />
+  <img src="public/screenshots/gleem-landing-6.png" width="200" />
+  <img src="public/screenshots/gleem-landing-8.png" width="90" />
+  <img src="public/screenshots/gleem-landing-7.png" width="90" />
+  <img src="public/screenshots/gleem-landing-9.png" width="90" />
+  <img src="public/screenshots/gleem-landing-10.png" width="90" />
 </p>
 
 ## Tech Stack
